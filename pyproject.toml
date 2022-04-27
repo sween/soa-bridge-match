@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "soa-bridge-match"
+version = "0.1.0"
+description = "Dataset builder"
+authors = ["Geoff Low <glow@mdsol.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+"fhir.resources" = "^6.2.2"
+xport = "^3.6.1"
+jupyterlab = "^3.3.4"
+openpyxl = "^3.0.9"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.1"
+black = {version = "^22.3.0", allow-prereleases = true}
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
