@@ -186,6 +186,8 @@ def patch_file(filename):
                 patients.append(resource)
                 # update the identifier
                 _identifier = patch_patient(resource)
+                # track the patient ids
+                patient_ids.append(_identifier)
             elif resource['resourceType'] in STATUS:
                 _sets = STATUS[resource['resourceType']]
                 for key, value in _sets.items():
