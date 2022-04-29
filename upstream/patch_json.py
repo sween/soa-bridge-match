@@ -163,7 +163,7 @@ def patch_file(filename):
             data["type"] = "transaction"
         subjects = []
         patients = []
-        patient_ids = []
+        patient_ids = {}
         for entry in data['entry']:
             resource = entry['resource']
             resource_type = resource['resourceType']
@@ -183,11 +183,12 @@ def patch_file(filename):
                 # update the identifier
                 _identifier = patch_research_subject(resource)
             elif resource['resourceType'] == 'Patient':
+                original_id = resource['id']
                 patients.append(resource)
                 # update the identifier
                 _identifier = patch_patient(resource)
                 # track the patient ids
-                patient_ids.append(_identifier)
+                patient_ids[_identifier] = original_id
             elif resource['resourceType'] in STATUS:
                 _sets = STATUS[resource['resourceType']]
                 for key, value in _sets.items():
@@ -235,14 +236,15 @@ def patch_file(filename):
             json.dump(data, f, indent=2)
         with open(f"{prefix}_dupes{ext}", 'w') as f:
             json.dump(dupes, f, indent=2)
-        split_entries = split_bundle(data, patient_ids)
+        split_entries = split_bundle(data, patient_ids.keys())
         for patient_id, entries in split_entries.items():
             content = dict(resourceType="Bundle",
                            id=str(uuid.uuid4()),
                            type="transaction",
                            meta=dict(lastUpdated=datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ')),
                            entry=entries)
-            with open(f"subjects/{prefix}_{patient_id}{ext}", 'w') as f:
+
+            with open(f"subjects/{prefix.replace('10_Patients', patient_ids.get(patient_id))}{ext}", 'w') as f:
                 json.dump(content, f, indent=2)
 
     else:
