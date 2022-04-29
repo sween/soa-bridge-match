@@ -13,12 +13,22 @@ class SourcedBundle:
     Wraps the bundle and generation thereof.
     """
 
-
-    def __init__(self, bundle: Optional[Bundle], identifier: Optional[str]) -> None:
+    def __init__(self, bundle: Optional[Bundle],
+                 identifier: Optional[str],
+                 filename: Optional[str]) -> None:
         self._resources = []
         self._identifier = identifier if identifier else uuid.uuid4().hex
+        self._filename = filename if filename else None
         self._bundle = bundle if bundle else None
         self._entities = {}
+
+    @property
+    def filename(self) -> str:
+        return os.path.basename(self._filename) if self._filename else f"{self._identifier}.json"
+
+    @property
+    def dirname(self) -> str:
+        return os.path.dirname(self._filename) if self._filename else "."
 
     @property
     def plan_definitions(self):
@@ -95,14 +105,19 @@ class SourcedBundle:
             self._bundle = Bundle(id=self._identifier, type="transaction")
         return self._bundle
 
-    def dump(self, target_dir: str):
+    def dump(self, target_dir: Optional[str] = None):
         """
         Dumps the bundle to a directory
         """
-        if not os.path.exists(target_dir):
-            os.makedirs(target_dir)
-        with open(os.path.join(target_dir, self._identifier + '.json'), 'w') as f:
-            f.write(self._bundle.as_json())
+
+        if target_dir:
+            if not os.path.exists(target_dir):
+                os.makedirs(target_dir)
+            fname = os.path.join(target_dir, self.filename)
+        else:
+            fname = os.path.join(self.dirname, self.filename)
+        with open(fname, 'w') as f:
+            f.write(self._bundle.json(indent=True))
 
     def add_resource(self, resource: Resource):
         """
@@ -113,19 +128,12 @@ class SourcedBundle:
                 print("Resource already exists in bundle")
                 return
         else:
+            print("Adding resource to bundle: {}".format(resource.resource_type))
             entry = BundleEntry(resource=resource,
-                                request=BundleEntryRequest(method="POST",
+                                request=BundleEntryRequest(method="PUT",
                                                            url=f"{resource.resource_type}/{resource.id}",
                                         ifNoneExist=f"identifier={resource.id}"))
             self._bundle.entry.append(entry)
-
-    def add_encounter(self, encounter: Encounter):
-        """
-        Adds an encounter to the bundle
-        """
-        entry = BundleEntry(resource=encounter)
-        entry.request = BundleEntryRequest(method="PUT", url=encounter.resource_type)
-        self._bundle.entry.append(entry)
 
     @classmethod
     def from_bundle_file(cls, filename: str):
@@ -135,4 +143,4 @@ class SourcedBundle:
         if not os.path.exists(filename):
             raise ValueError("File does not exist")
         bundle = Bundle.parse_file(filename)
-        return cls(bundle, bundle.id)
+        return cls(bundle, bundle.id, filename)

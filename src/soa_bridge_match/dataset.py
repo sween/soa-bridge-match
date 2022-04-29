@@ -1,10 +1,12 @@
 import hashlib
 import os
+from typing import Optional
 
 from fhir.resources.bundle import Bundle
 from fhir.resources.careplan import CarePlan
 from fhir.resources.coding import Coding
 from fhir.resources.encounter import Encounter
+from fhir.resources.fhirtypes import Canonical
 from fhir.resources.patient import Patient
 from fhir.resources.period import Period
 from fhir.resources.reference import Reference
@@ -94,10 +96,17 @@ class Naptha:
         # the bundle will include the ResearchStudy, ResearchSubject, and Patient resources
         pass
 
-    def parse_sv(self, subject_id: str):
+    def merge_sv(self, subject_id: Optional[str] = None):
         """
         Parse the SV dataset for a subject
         """
+        if subject_id:
+            print("Processing subject", subject_id)
+        if subject_id is None:
+            for _subject_id in self.get_subjects():
+                self.merge_sv(_subject_id)
+            else:
+                return
         if subject_id not in self.get_subjects():
             raise ValueError(f"Subject {subject_id} does not exist")
         # the bundle will include the ResearchStudy, ResearchSubject, and Patient resources
@@ -126,29 +135,36 @@ class Naptha:
                   "201.0": "H2Q-MC-LZZT-Study-RT-15",
                   "501.0": None}
         for record in sv.itertuples():
-            visit_num = record.VISITNUM
-            if visit_num not in pd_map:
+            if record.USUBJID not in self.content.subjects:
                 continue
-            plan_def_id = pd_map[visit_num]
+            print("Processing patient {} -> {}".format(record.USUBJID, record.VISITNUM))
+            visit_num = record.VISITNUM
+            if str(visit_num) not in pd_map:
+                print("Skipping visit {}".format(visit_num))
+                continue
+            plan_def_id = pd_map[str(visit_num)]
             if plan_def_id is None:
                 print("Ignoring visit", visit_num)
                 continue
             care_plan_id = f"{patient_hash_id}-{visit_num}"
             # create a care plan
-            care_plan = CarePlan(id=care_plan_id, status="completed", intent="order")
-            # bind the care plan
-            care_plan.subject = Reference(reference=f"Patient/{patient_hash_id}")
-            care_plan.basedOn = Reference(reference=f"PlanDefinition/{plan_def_id}")
+            care_plan = CarePlan(id=care_plan_id, status="completed",
+                                 intent="order",
+                                 subject=Reference(reference=f"Patient/{patient_hash_id}"))
+            # bind the care plan - todo!
+            # care_plan.instantiatesCanonical = Canonical(reference=f"PlanDefinition/{plan_def_id}")
             # create the service request
-            service_request = ServiceRequest(id=f"{care_plan_id}-ServiceRequest", status="completed", intent="order")
-            service_request.subject = Reference(reference=f"Patient/{patient_hash_id}")
-            service_request.basedOn = Reference(reference=f"CarePlan/{care_plan_id}")
-            service_request.subject = Reference(reference=f"Patient/{patient_hash_id}")
-            encounter = Encounter(status="finished",
-                                  class_fhir=Coding(code="IMP", system="http://hl7.org/fhir/v3/ActCode"))
-            encounter.id = f"{record.USUBJID}-{record.VISITNUM}-"
-            encounter.subject = Reference(reference=f"Patient/{patient_hash_id}")
-            encounter.basedOn = Reference(reference=f"ServiceRequest/{care_plan_id}-ServiceRequest")
+            service_request = ServiceRequest(id=f"{care_plan_id}-ServiceRequest",
+                                             status="completed",
+                                             intent="order",
+                                             subject=Reference(reference=f"Patient/{patient_hash_id}"),
+                                             basedOn=[Reference(reference=f"CarePlan/{care_plan_id}")])
+            encounter = Encounter(id = f"{record.USUBJID}-{record.VISITNUM}",
+                                  status="finished",
+                                  class_fhir=Coding(code="IMP",
+                                                    system="http://hl7.org/fhir/v3/ActCode"),
+                                  subject=Reference(reference=f"Patient/{patient_hash_id}"),
+                                  basedOn=[Reference(reference=f"ServiceRequest/{care_plan_id}-ServiceRequest")])
             period = {}
             if record.SVSTDTC:
                 period["start"] = record.SVSTDTC
