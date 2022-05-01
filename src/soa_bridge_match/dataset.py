@@ -100,8 +100,6 @@ class Naptha:
         """
         Parse the SV dataset for a subject
         """
-        if subject_id:
-            print("Processing subject", subject_id)
         if subject_id is None:
             for _subject_id in self.get_subjects():
                 self.merge_sv(_subject_id)
@@ -150,9 +148,11 @@ class Naptha:
             # create a care plan
             care_plan = CarePlan(id=care_plan_id, status="completed",
                                  intent="order",
-                                 subject=Reference(reference=f"Patient/{patient_hash_id}"))
+                                 subject=Reference(reference=f"Patient/{patient_hash_id}"),
+                                 instantiatesCanonical=[f"PlanDefinition/{plan_def_id}"],
+                                 title=f"Subject {record.USUBJID} {visit_num}")
             # bind the care plan - todo!
-            # care_plan.instantiatesCanonical = Canonical(reference=f"PlanDefinition/{plan_def_id}")
+            # care_plan.instantiatesCanonical = [f"PlanDefinition/{plan_def_id}"]
             # create the service request
             service_request = ServiceRequest(id=f"{care_plan_id}-ServiceRequest",
                                              status="completed",

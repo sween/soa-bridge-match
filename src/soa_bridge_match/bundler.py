@@ -125,7 +125,7 @@ class SourcedBundle:
         """
         for entry in self._bundle.entry:
             if entry.resource.resource_type == resource.resource_type and entry.resource.id == resource.id:
-                print("Resource already exists in bundle")
+                print(f"Resource {resource.resource_type}/{resource.id} already exists in bundle")
                 return
         else:
             print("Adding resource to bundle: {}".format(resource.resource_type))
