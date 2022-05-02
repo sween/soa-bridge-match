@@ -169,12 +169,12 @@ def patch_file(filename):
         subjects = []
         patients = []
         patient_ids = {}
-        for entry in data['entry']:
+        for idx, entry in enumerate(data['entry']):
             resource = entry['resource']
             resource_type = resource['resourceType']
             _identifier = resource['id']
             if _identifier in id_cache.get(resource_type, []):
-                print("Updating duplicate identifier", _identifier, "for resource", resource_type)
+                print(f"{idx}: Updating duplicate identifier", _identifier, "for resource", resource_type)
                 _id = str(uuid.uuid4())
                 # add a reference to the duplicate
                 dupes[_identifier] = _id
@@ -230,6 +230,7 @@ def patch_file(filename):
                          ifNoneExist=f"id={_site_id}")
         )
         data['entry'].append(site_entry)
+        # add a record for the medication
         medication_entry = dict(resource=dict(
             resourceType='Medication',
             id="LY246708"),
@@ -238,6 +239,7 @@ def patch_file(filename):
                          ifNoneExist=f"id=LY246708")
         )
         data['entry'].append(medication_entry)
+        # check we haven't made a new subject or two
         assert len(patients) == len(subjects)
         with open(f"{prefix}_patched{ext}", 'w') as f:
             json.dump(data, f, indent=2)
