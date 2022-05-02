@@ -7,6 +7,17 @@ The input is taken in and a few patches are applied to the content and it is spl
 This can then be augmented elements on an adhoc basis:
 - Current implementation is using the **SV** dataset to generate encounters
 
+## Installation
+1. Install Poetry (https://python-poetry.org/docs/#installation)
+2. Clone the repository
+  ```
+  git clone https://github.com/glow-mdsol/soa-bridge-match
+  ```
+3. Install the requirements
+  ```
+  poetry install
+  ```
+
 ## Generating the files.
 
 To regenerate the files, run the following command (in the upstream folder):
