@@ -16,6 +16,7 @@ This script does some elementary patching of the JSON files from the upstream
 - adds the actuality reference for the AE
 - fixes some id duplication for Observations
 - adds request metadata for the entries to try and use UPSERT semantics for the resources
+- replaces OTHER LONG LOINC name with Temp measurement 
 """
 
 STATUS = dict(Observation=dict(status="final"),
@@ -104,12 +105,13 @@ def patch_observation(observation: dict):
     Add the OTHER LOINC LONG NAME fix
     """
     code = observation['code']
-    if code['text'] == 'OTHER LOINC LONG NAME':
+    if 'text' in code and code['text'] == 'OTHER LOINC LONG NAME':
         code['text'] = 'Body temperature'
         coding = code['coding'][0]
         coding['code'] = '8310-5'
         coding['system'] = 'http://loinc.org'
         coding['display'] = 'Body temperature'
+        print("Patched OTHER LOINC LONG NAME")
 
 
 def split_bundle(bundle: dict, expected: list[str]) -> dict:
@@ -189,6 +191,8 @@ def patch_file(filename):
                 _identifier = patch_patient(resource)
                 # track the patient ids
                 patient_ids[_identifier] = original_id
+            elif resource['resourceType'] == 'Observation':
+                patch_observation(resource)
             elif resource['resourceType'] in STATUS:
                 _sets = STATUS[resource['resourceType']]
                 for key, value in _sets.items():
