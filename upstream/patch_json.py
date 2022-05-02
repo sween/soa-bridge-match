@@ -177,7 +177,7 @@ def patch_file(filename):
                 print(f"{idx}: Updating duplicate identifier", _identifier, "for resource", resource_type)
                 _id = str(uuid.uuid4())
                 # add a reference to the duplicate
-                dupes[_identifier] = _id
+                dupes.setdefault(resource_type, []).append(dict(id=_identifier, new_id=_id, idx=idx))
                 resource['id'] = _id
             else:
                 id_cache.setdefault(resource_type, []).append(_identifier)
