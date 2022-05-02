@@ -17,6 +17,7 @@ This script does some elementary patching of the JSON files from the upstream
 - fixes some id duplication for Observations
 - adds request metadata for the entries to try and use UPSERT semantics for the resources
 - replaces OTHER LONG LOINC name with Temp measurement 
+- add status to observations (wierdly it thinks some are missing)   
 """
 
 STATUS = dict(Observation=dict(status="final"),
@@ -112,6 +113,8 @@ def patch_observation(observation: dict):
         coding['system'] = 'http://loinc.org'
         coding['display'] = 'Body temperature'
         print("Patched OTHER LOINC LONG NAME")
+    if 'status' not in observation:
+        observation['status'] = 'final'
 
 
 def split_bundle(bundle: dict, expected: list[str]) -> dict:
