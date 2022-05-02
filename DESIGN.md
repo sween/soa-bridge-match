@@ -35,3 +35,22 @@ graph TD
     Observation --subject--> Patient
     end
 ```
+
+## Queries
+
+1. Get the ResearchStudy
+    ```
+    https://api.logicahealth.org/soaconnectathon30/open/ResearchStudy?identifier=H2Q-MC-LZZT-ResearchStudy
+    ```
+2. Get the ResearchSubject by Subject ID
+    ```
+    https://api.logicahealth.org/soaconnectathon30/open/ResearchSubject?identifier=01-701-1118
+    ```
+3. Get the Protocol Definition
+    ```
+    https://api.logicahealth.org/soaconnectathon30/open/PlanDefinition?identifier=H2Q-MC-LZZT-ProtocolDesign
+    ```
+4. Get the PlannedVisit by OID
+    ```
+    https://api.logicahealth.org/soaconnectathon30/open/PlanDefinition?identifier=SE.TRT_VISIT_10
+    ```
