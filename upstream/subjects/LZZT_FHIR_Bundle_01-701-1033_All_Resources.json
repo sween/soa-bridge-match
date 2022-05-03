@@ -1,8 +1,8 @@
 {
  "resourceType": "Bundle",
- "id": "1ec0a7a3-3fd3-431c-b9c8-08d44780d7cb",
+ "id": "0a3c38a4-a502-40ae-82ea-37ae19f07620",
  "meta": {
-  "lastUpdated": "2022-05-02T14:48:36+00:00"
+  "lastUpdated": "2022-05-03T21:01:31+00:00"
  },
  "type": "transaction",
  "entry": [
@@ -3958,7 +3958,7 @@
   {
    "resource": {
     "resourceType": "Observation",
-    "id": "5150f0d1-73a6-495b-9cda-af3316dbecef",
+    "id": "c465363b-9447-4b71-bc25-6a030f566d6c",
     "meta": {
      "profile": [
       "http://hl7.org/fhir/StructureDefinition/vitalsigns"
@@ -4010,7 +4010,7 @@
   {
    "resource": {
     "resourceType": "Observation",
-    "id": "a48aaf30-b239-4e8a-a0ed-9fb0afac120a",
+    "id": "fb37e6ee-b223-49d6-ab95-02e25ad99d0c",
     "meta": {
      "profile": [
       "http://hl7.org/fhir/StructureDefinition/vitalsigns"
@@ -5567,7 +5567,7 @@
   {
    "resource": {
     "resourceType": "Observation",
-    "id": "0b41fbd1-08f2-48e4-97ce-b7db326a2a77",
+    "id": "a0399126-dba3-4d70-9791-d7304af0111c",
     "meta": {
      "profile": [
       "http://hl7.org/fhir/StructureDefinition/vitalsigns"
@@ -15709,6 +15709,10 @@
         "relationship": "after",
         "offsetRange": {
          "low": {
+          "value": 180,
+          "code": "d"
+         },
+         "high": {
           "value": 184,
           "code": "d"
          }

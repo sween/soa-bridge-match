@@ -1,8 +1,8 @@
 {
  "resourceType": "Bundle",
- "id": "f80415af-3f35-4e34-9052-d146a4d0dd18",
+ "id": "c16e035d-ea93-4d15-b197-6be3e427d597",
  "meta": {
-  "lastUpdated": "2022-05-02T14:48:36+00:00"
+  "lastUpdated": "2022-05-03T21:01:31+00:00"
  },
  "type": "transaction",
  "entry": [
@@ -3176,6 +3176,10 @@
         "relationship": "after",
         "offsetRange": {
          "low": {
+          "value": 180,
+          "code": "d"
+         },
+         "high": {
           "value": 184,
           "code": "d"
          }
