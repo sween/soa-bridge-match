@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import hashlib
 import os
 from typing import Optional
@@ -6,30 +8,37 @@ from fhir.resources.bundle import Bundle
 from fhir.resources.careplan import CarePlan
 from fhir.resources.coding import Coding
 from fhir.resources.encounter import Encounter
-from fhir.resources.fhirtypes import Canonical
 from fhir.resources.patient import Patient
 from fhir.resources.period import Period
 from fhir.resources.reference import Reference
 from fhir.resources.servicerequest import ServiceRequest
 
 from .bundler import SourcedBundle
-from .config import Configuration
 from .connector import Connector
 
 
 class Naptha:
 
-    def __init__(self, template: str) -> None:
+    def __init__(self, templatefile: Optional[str],
+                 templatecontent: Optional[Bundle] = None) -> None:
         self._connector = Connector()
         self._subjects = {}
         self._patients = {}
         self._subjects = {}
+        self._synthea = None
         # load the template
-        self._content = SourcedBundle.from_bundle_file(template)
+        if templatecontent:
+            self._content = templatecontent
+        else:
+            self._content = SourcedBundle.from_bundle_file(templatefile)
 
     @property
     def content(self):
         return self._content
+
+    def dump(self, target_dir: Optional[str] = None,
+             name_suffix: Optional[str] = None):
+        self._content.dump(target_dir, name_suffix)
 
     def get_subjects(self):
         """
@@ -60,41 +69,38 @@ class Naptha:
         """
         return self.get_subject_data(subject_id, "SV")
 
-    def parse_dataset(self, dataset_name: str):
-        """
-        Parse a CDISC Pilot Dataset
-        """
-        if not os.path.exists(os.path.join("../../doc/config", f"{dataset_name}.yml")):
-            print("Unable to process configuration file")
-        config = Configuration.from_file(os.path.join("../../doc/config", f"{dataset_name}.yml"))
-        _columns = [x for x in config.columns()]
-        dataset = self._connector.load_cdiscpilot_dataset(dataset_name)
-        for offset, record in enumerate(dataset.iterrows()):
-            # generate a patient resource
-            patient = self._generate_patient(record.USUBJID)
-            # generate a bundle
-            bundle = Bundle()
-            # add the patient to the bundle
-            bundle.add_entry(patient)
-            # add the bundle to the content
-            self.content.add_entry(bundle)
+    # def parse_dataset(self, dataset_name: str):
+    #     """
+    #     Parse a CDISC Pilot Dataset
+    #     """
+    #     if not os.path.exists(os.path.join("../../doc/config", f"{dataset_name}.yml")):
+    #         print("Unable to process configuration file")
+    #     config = Configuration.from_file(os.path.join("../../doc/config", f"{dataset_name}.yml"))
+    #     _columns = [x for x in config.columns()]
+    #     dataset = self._connector.load_cdiscpilot_dataset(dataset_name)
+    #     for offset, record in enumerate(dataset.iterrows()):
+    #         # generate a patient resource
+    #         patient = self._generate_patient(record.USUBJID)
+    #         # generate a bundle
+    #         bundle = Bundle()
+    #         # add the patient to the bundle
+    #         bundle.add_entry(patient)
+    #         # add the bundle to the content
+    #         self.content.add_entry(bundle)
 
-    def _generate_patient(self, subject_id: str) -> Patient:
-        """
-        Generate a Patient resource
-        """
-        # Use a hash id for the Patient Resource
-        _patient_id = hashlib.md5(subject_id.encode('utf-8')).hexdigest()
-        dm = self.get_subject_dm(subject_id)
-        patient = Patient(id=_patient_id)
-        return patient
+    # def _generate_patient(self, subject_id: str) -> Patient:
+    #     """
+    #     Generate a Patient resource
+    #     """
+    #     # Use a hash id for the Patient Resource
+    #     _patient_id = hashlib.md5(subject_id.encode('utf-8')).hexdigest()
+    #     dm = self.get_subject_dm(subject_id)
+    #     patient = Patient(id=_patient_id)
+    #     return patient
 
-    def dump_subject(self, subject_id: str, domains: list[str]):
-        if subject_id not in self.get_subjects():
-            raise ValueError(f"Subject {subject_id} does not exist")
-        subject = self.get_subject(subject_id)
-        # the bundle will include the ResearchStudy, ResearchSubject, and Patient resources
-        pass
+    def clone(self, subject_id: str) -> Naptha:
+        cloned = self._content.clone_subject(subject_id)
+        return Naptha(templatefile=None, templatecontent=cloned)
 
     def merge_sv(self, subject_id: Optional[str] = None):
         """
@@ -159,7 +165,7 @@ class Naptha:
                                              intent="order",
                                              subject=Reference(reference=f"Patient/{patient_hash_id}"),
                                              basedOn=[Reference(reference=f"CarePlan/{care_plan_id}")])
-            encounter = Encounter(id = f"{record.USUBJID}-{record.VISITNUM}",
+            encounter = Encounter(id=f"{record.USUBJID}-{record.VISITNUM}",
                                   status="finished",
                                   class_fhir=Coding(code="IMP",
                                                     system="http://hl7.org/fhir/v3/ActCode"),
