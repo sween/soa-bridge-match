@@ -13,7 +13,7 @@ load_dotenv()
 class SyntheaPicker:
 
     def __init__(self, path: Optional[str] = None):
-        self.path = path if path else os.getenv('SYNTHEA_PATH')
+        self.path = path if path else os.getenv('SYNTHEA_DATA_DIR')
         self._candidates = []
         self._cache = {}
 
