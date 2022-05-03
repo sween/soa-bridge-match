@@ -150,6 +150,7 @@ class SourcedBundle:
         patient_id = self.subject(subject_id).individual.reference.split('/')[-1]
         lab_obs = self.synthea_bridge.get_lab_observation()
         lab_obs.subject.reference = f"Patient/{patient_id}"
+        lab_obs.fhir_comments = ["This is a synthetic observation"]
         # remove the encounter reference
         del lab_obs.encounter
         # sanitise the lab observation
@@ -163,6 +164,7 @@ class SourcedBundle:
         patient_id = self.subject(subject_id).individual.reference.split('/')[-1]
         vital_obs = self.synthea_bridge.get_vital_observation()
         vital_obs.subject.reference = f"Patient/{patient_id}"
+        vital_obs.fhir_comments = ["This is a synthetic observation"]
         # remove the encounter reference
         del vital_obs.encounter
         # sanitise the lab observation
