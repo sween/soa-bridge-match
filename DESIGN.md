@@ -22,10 +22,10 @@ graph TD
     subgraph Design
     ResearchStudy --protocol--> PlanDefinition
     ResearchSubject --study--> ResearchStudy
-    PlanDefinition --> PlanDefinition
+    PlanDefinition --action--> PlanDefinition
     end
     subgraph Execution
-    CarePlan --basedOn--> PlanDefinition
+    CarePlan --instantiatesCanonical--> PlanDefinition
     ServiceRequest --basedOn--> CarePlan
     Encounter --basedOn--> ServiceRequest
     Observation --encounter--> Encounter
