@@ -6,6 +6,7 @@ from pandas import DataFrame
 # define a prefix for the CDISC Pilot Datasets
 PREFIX = "https://github.com/phuse-org/phuse-scripts/raw/master/data/sdtm/cdiscpilot01/"
 
+
 def check_link(url: str) -> bool:
     """
     ensure that the URL exists
@@ -18,9 +19,12 @@ def check_link(url: str) -> bool:
     status_code = urlopen(url).getcode()
     return status_code == 200
 
+
 # List of datasets
-DATASETS = ["AE", "CM", "DM", "DS", "EX", "LB", "MH", "QS", "RELREC", "SC", "SE", "SUPPAE", "SUPPDM", "SUPPDS", 
-"SUPPLB", "SV", "TA", "TV", "TI", "TS", "TV", "VS"]
+DATASETS = ["AE", "CM", "DM", "DS", "EX", "LB", "MH", "QS", "RELREC", "SC", "SE",
+            "SUPPAE", "SUPPDM", "SUPPDS",
+            "SUPPLB", "SV", "TA", "TV", "TI", "TS", "TV", "VS"]
+
 
 class Connector:
     def __init__(self) -> None:
@@ -59,5 +63,3 @@ class Connector:
             else:
                 self.__cache[domain_prefix] = None
         return self.__cache[domain_prefix]
- 
-
