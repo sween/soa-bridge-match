@@ -1,15 +1,12 @@
 import os
 import sys
 
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-
-from soa_bridge_match import dataset
-
+from soa_bridge_match.dataset import Naptha
 
 def process_file(filename):
     # getting the bundle
     print("Processing file: {}".format(filename))
-    ds = dataset.Naptha(filename)
+    ds = Naptha(filename)
     ds.merge_sv()
     ds.content.dump()
 
