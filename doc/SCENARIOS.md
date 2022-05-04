@@ -46,6 +46,7 @@ The approach in this case is very similar to the approach used in the previous s
 * Defined Encounter - assuming we implement the PlanDefinition and the -..-> Encounter then the resources can be filtered based on the Patient and the `encounter` field
 * Defined Activity binding - looking at the ServiceRequest resources and using the `basedOn` field to filter the resources
 
+The preferred approach is to be able to split out the different outcomes based on the CarePlan cascade - this asserted knowledge represents a good way of partitioning the data. There are a series of queries that need to be run to get the data; but the approach is very systematic and ultimately can be automated.
 
 ## Summary
 Using this approach we can build up a structured set of Queries based on our simple Workflow based model.  
