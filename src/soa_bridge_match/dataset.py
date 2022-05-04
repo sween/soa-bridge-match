@@ -57,6 +57,12 @@ class Naptha:
         dataset = dataset[dataset.USUBJID == subject_id]
         return dataset
 
+    def get_subject_cm(self, subject_id: str):
+        """
+        Get the demographics for a subject from the dataset
+        """
+        return self.get_subject_data(subject_id, "CM")
+
     def get_subject_dm(self, subject_id: str):
         """
         Get the demographics for a subject from the dataset
