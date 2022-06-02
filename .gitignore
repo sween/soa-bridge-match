@@ -3,3 +3,5 @@ doc/FHIR2SDTM_Software_2022-01-09*
 *.ipynb_checkpoints
 .idea
 upstream/fhir
+
+__pycache__
