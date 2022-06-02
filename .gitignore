@@ -5,3 +5,7 @@ doc/FHIR2SDTM_Software_2022-01-09*
 upstream/fhir
 
 __pycache__
+
+.env
+
+.DS_Store
