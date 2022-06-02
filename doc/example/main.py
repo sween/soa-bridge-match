@@ -8,10 +8,10 @@ def run(subject_id, study_id="H2Q-MC-LZZT"):
     protocol = window.get_protocol()
     processed = window.process_protocol(protocol)
     subject_date = window.get_index_date(subject_id, processed)
-    print(subject_date)
+    
 
 
 if __name__ == '__main__':
     STUDY_ID = "H2Q-MC-LZZT"
-    SUBJECT_ID = "01-701-9999"
+    SUBJECT_ID = "01-701-1111"
     run(SUBJECT_ID, STUDY_ID)

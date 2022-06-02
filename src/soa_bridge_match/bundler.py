@@ -2,6 +2,7 @@ from __future__ import annotations
 import hashlib
 import os
 import random
+import datetime
 from typing import Optional, List
 from fhir.resources.bundle import Bundle, BundleEntry, BundleEntryRequest
 
@@ -15,6 +16,16 @@ from fhir.resources.researchsubject import ResearchSubject
 from fhir.resources.resource import Resource
 
 from .synthea import SyntheaPicker
+
+
+def randomise_date(date: datetime.date) -> datetime.date:
+    _date = None
+    if random.random() > 0.5:
+        _date = date + datetime.timedelta(random.randint(10, 2000))
+    else:
+        _date = date - datetime.timedelta(random.randint(10, 2000))
+    return _date
+
 
 class SourcedBundle:
     """
@@ -201,24 +212,32 @@ class SourcedBundle:
         _new_patient_id = hashlib.md5(new_subject_id.encode('utf-8')).hexdigest()
         # create a new bundle
         _bundle = Bundle(id=str(uuid.uuid4()), type="transaction", entry=[])
+        id_cache = {}
         for entry in self._bundle.entry:  # type: BundleEntry
             if entry.resource.resource_type == 'Patient' and entry.resource.id == _patient_id:
-                resource = entry.resource.copy()  # type: Patient
+                # remap the patient
+                patient = entry.resource.copy()  # type: Patient
                 # clone the patient
-                resource.id = _new_patient_id
+                patient.id = _new_patient_id
+                # randomise
+                # Randomise the date of birth
+                patient.birthDate = randomise_date(patient.birthDate)
+                # randonise gender
+                _gender = random.choice(["male", "female"])
+                patient.gender = _gender
                 link = PatientLink(type='refer', other=Reference(reference=f"Patient/{_old_subject_id}"))
                 if not getattr(resource, 'link'):
                     resource.link = []
-                resource.link.append(link)
-                resource.fhir_comments = ["Cloned from Subject {}".format(_old_subject_id)]
-                _entry = BundleEntry(resource=resource,
+                patient.link.append(link)
+                patient.fhir_comments = ["Cloned from Subject {}".format(_old_subject_id)]
+                _entry = BundleEntry(resource=patient,
                                      request=BundleEntryRequest(method="PUT",
                                                                 url=f"{resource.resource_type}/{resource.id}",
                                                                 ifNoneExist=f"identifier={resource.id}"))
 
                 # add the patient to the bundle
                 _bundle.entry.append(_entry)
-            elif entry.resource.resource_type == 'ResearchSubject'\
+            elif entry.resource.resource_type == 'ResearchSubject' \
                     and entry.resource.id == _subject.id:
                 resource = entry.resource.copy()
                 # clone the subject
@@ -248,7 +267,8 @@ class SourcedBundle:
                     resource.title = resource.title.replace(_subject_id, new_subject_id)
 
                 # need a deterministic id
-                hashed_id = hashlib.md5(f"{_patient_id}-{resource.resource_type}-{resource.id}".encode('utf-8')).hexdigest()
+                hashed_id = hashlib.md5(
+                    f"{_patient_id}-{resource.resource_type}-{resource.id}".encode('utf-8')).hexdigest()
                 # need to map the IDs
                 resource.id = hashed_id
                 if getattr(resource, 'contained', None):

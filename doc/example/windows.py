@@ -17,6 +17,12 @@ from fhir.resources.careplan import CarePlan
 from fhir.resources.resource import Resource
 from fhir.resources.servicerequest import ServiceRequest
 
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger("soa-bridge-match.example")
+
+
 """
 1. Identify the ResearchStudy (`ResearchStudy?_id=PROTOCOL_ID`)
 2. Identify the Protocol Design **PlanDefinition** through the `protocol` field of the research study
@@ -128,6 +134,7 @@ class StudyWindow:
         """
         Extracts the protocol information and returns a dictionary with the planned encounters
         """
+        logger.info(f'Processing protocol PlanDefinition {protocol.id}')
         ids = {}
         encounters = {}
         for idx, action in enumerate(protocol.action):  # type: int, PlanDefinitionAction
@@ -183,7 +190,6 @@ class StudyWindow:
         if cp_bnd.total != 1:
             raise Exception(f'No CarePlan found for {idx_pd.id}')
         cp = cp_bnd.entry[0].resource  # type: CarePlan
-        print("CarePlan:", cp)
         # get the service request
         sr_bnd = self._get("ServiceRequest?patient={}&"
                            "based-on=CarePlan/{}".format(research_subject.individual.reference,
@@ -194,6 +200,13 @@ class StudyWindow:
         # get the encounter
         enc_bnd = self._get("Encounter?patient={}&based-on=ServiceRequest/{}".format(
             research_subject.individual.reference, sd.id))
-        if research_subject.indexDate:
-            return research_subject.indexDate
-        return None
+        enc = enc_bnd.entry[0].resource  # type: Encounter
+        index_date = enc.period.start
+        for visit, offsets in protocol.items():
+            print("visit:", visit, "offsets:", offsets)
+            _qtext = ""
+            if offsets.get("offset_high"):
+                
+            elif offsets.get("offset_low"):
+                pass
+            offsets["date"] = 

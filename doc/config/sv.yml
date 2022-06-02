@@ -1,0 +1,34 @@
+key:
+  - USUBJID
+columns:
+  STUDYID:
+    ResearchStudy:
+      identfier:
+        value
+  DOMAIN:
+  USUBJID:
+    ResearchSubject:
+      identfier:
+        value
+  VISITNUM:
+    Encounter:
+      identifier:
+        value
+  VISIT:
+    Encounter:
+      identfier:
+        value
+      status:
+        "finished"
+  VISITDY:
+  SVSTDTC:
+    Encounter:
+      period:
+        start
+  SVENDTC:
+    Encounter:
+      period:
+        end
+  SVSTDY:
+  SVENDY:
+  SVUPDES:
