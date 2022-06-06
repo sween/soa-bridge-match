@@ -1,5 +1,5 @@
 import re
-from datetime import datetime
+import datetime
 from typing import Optional, List
 
 import requests
@@ -167,7 +167,7 @@ class StudyWindow:
 
         return encounters
 
-    def get_index_date(self, subject_id: str, protocol: dict) -> Optional[datetime]:
+    def get_index_date(self, subject_id: str, protocol: dict) -> Optional[datetime.datetime]:
         """
         Returns the index date for a subject
         """
@@ -201,12 +201,38 @@ class StudyWindow:
         enc_bnd = self._get("Encounter?patient={}&based-on=ServiceRequest/{}".format(
             research_subject.individual.reference, sd.id))
         enc = enc_bnd.entry[0].resource  # type: Encounter
-        index_date = enc.period.start
+        index_date = enc.period.start   # type: datetime.date
         for visit, offsets in protocol.items():
-            print("visit:", visit, "offsets:", offsets)
-            _qtext = ""
-            if offsets.get("offset_high"):
-                
-            elif offsets.get("offset_low"):
-                pass
-            offsets["date"] = 
+            qtext = []
+
+            if offsets["is_index"] is True:
+                qtext = [f"eq{index_date.date().isoformat()}"]
+            else:
+                if offsets.get("offset_high"):
+                    _offset = offsets.get("offset_high")
+                    if _offset.get('unit', 'd') == 'd':
+                        delta = datetime.timedelta(days=_offset.get('value'))
+                    else:
+                        # TODO: units, dummy
+                        delta = datetime.timedelta(days=_offset.get('value'))
+                    if offsets.get("relationship") == "after":
+                        _tgt = (index_date + delta).date().isoformat()
+                        qtext.append(f"le{_tgt}")
+                    else:
+                        _tgt = (index_date - delta).date().isoformat()
+                        qtext.append(f"ge{_tgt}")
+                if offsets.get("offset_low"):
+                    _offset = offsets.get("offset_low")
+                    if _offset.get('unit', 'd') == 'd':
+                        delta = datetime.timedelta(days=_offset.get('value'))
+                    else:
+                        # TODO: units, dummy
+                        delta = datetime.timedelta(days=_offset.get('value'))
+                    if offsets.get("relationship") == "after":
+                        _tgt = (index_date + delta).date().isoformat()
+                        qtext.append(f"ge{_tgt}")
+                    else:
+                        _tgt = (index_date - delta).date().isoformat()
+                        qtext.append(f"le{_tgt}")
+            offsets["datequery"] = "&date=".join(qtext)
+            print(f"{visit} Query: {offsets['datequery']}",)
