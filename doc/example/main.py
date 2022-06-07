@@ -7,7 +7,7 @@ def run(subject_id, study_id="H2Q-MC-LZZT"):
     window = StudyWindow(BASEURL, study_id)
     protocol = window.get_protocol()
     processed = window.process_protocol(protocol)
-    subject_date = window.get_index_date(subject_id, processed)
+    window.get_subject_scheme(subject_id, processed)
     
 
 
