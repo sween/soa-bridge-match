@@ -60,6 +60,8 @@ class StudyWindow:
         self.study_id = study_id
         self._visits = []
         self._session = None
+        self._encounter_cache = {}
+        self._subject_cache = {}
 
     @property
     def client(self):
@@ -111,14 +113,16 @@ class StudyWindow:
         return [x.resource for x in bundle.entry if x.resource.resource_type == 'ResearchSubject']
 
     def _get_research_subject(self, subject_id: str) -> Optional[ResearchSubject]:
-        study = self._get_research_study()
-        if study is None:
-            return None
-        url = f'ResearchSubject?_id={subject_id}&study={study.id}'
-        bundle = self._get(url)
-        if bundle.total != 1:
-            raise Exception(f'No ResearchSubject {subject_id} found for {self.study_id} or more than one')
-        return bundle.entry[0].resource
+        if not subject_id in self._subject_cache:
+            study = self._get_research_study()
+            if study is None:
+                return None
+            url = f'ResearchSubject?_id={subject_id}&study={study.id}'
+            bundle = self._get(url)
+            if bundle.total != 1:
+                raise Exception(f'No ResearchSubject {subject_id} found for {self.study_id} or more than one')
+            self._subject_cache[subject_id] = bundle.entry[0].resource
+        return self._subject_cache[subject_id]
 
     def get_protocol(self) -> Optional[PlanDefinition]:
         research_study = self._get_research_study()
@@ -167,44 +171,58 @@ class StudyWindow:
 
         return encounters
 
-    def get_index_date(self, subject_id: str, protocol: dict) -> Optional[datetime.datetime]:
+    def get_encounter_for_subject(self, subject_id: str, plan_definition_id: str) -> Optional[Encounter]:
+        _idx = f"{subject_id}_{plan_definition_id}"
+        if plan_definition_id.startswith("PlanDefinition"):
+            plan_definition_id = plan_definition_id.split("/")[1]
+        if _idx not in self._encounter_cache:
+            research_subject = self._get_research_subject(subject_id)
+            if research_subject is None:
+                # can't find subject
+                return None
+            # get the careplan
+            cp_bnd = self._get(
+                "CarePlan?patient={}&"
+                "instantiates-canonical=PlanDefinition/{}".format(research_subject.individual.reference,
+                                                                  plan_definition_id))
+            if cp_bnd.total != 1:
+                raise Exception(f'No CarePlan found for {plan_definition_id}')
+            cp = cp_bnd.entry[0].resource  # type: CarePlan
+            # get the service request
+            sr_bnd = self._get("ServiceRequest?patient={}&"
+                               "based-on=CarePlan/{}".format(research_subject.individual.reference,
+                                                             cp.id))
+            if sr_bnd.total == 0:
+                raise Exception(f'No ServiceRequest found for {cp.id}')
+            sd = sr_bnd.entry[0].resource  # type: ServiceRequest
+            # get the encounter
+            enc_bnd = self._get("Encounter?patient={}&based-on=ServiceRequest/{}".format(
+                research_subject.individual.reference, sd.id))
+            self._encounter_cache[_idx] = enc_bnd.entry[0].resource  # type: Encounter
+        return self._encounter_cache.get(_idx)
+
+    def get_subject_scheme(self, subject_id: str, protocol: dict):
         """
         Returns the index date for a subject
         """
         research_subject = self._get_research_subject(subject_id)
         if research_subject is None:
-            # can't find subject
-            return None
+            print(f"Subject {subject_id} not found")
+            return
         trigger_events = [x for x in protocol.values() if x['is_index']]
         print("Trigger events:", trigger_events)
         assert len(trigger_events) == 1, "Unable to id index event"
         idx_pd = self._get(trigger_events[0]['definition'])
         if idx_pd is None:
             raise Exception(f'No PlanDefinition found for {trigger_events[0]["definition"]}')
-
-        # get the careplan
-        cp_bnd = self._get(
-            "CarePlan?patient={}&"
-            "instantiates-canonical=PlanDefinition/{}".format(research_subject.individual.reference,
-                                                              idx_pd.id))
-        if cp_bnd.total != 1:
-            raise Exception(f'No CarePlan found for {idx_pd.id}')
-        cp = cp_bnd.entry[0].resource  # type: CarePlan
-        # get the service request
-        sr_bnd = self._get("ServiceRequest?patient={}&"
-                           "based-on=CarePlan/{}".format(research_subject.individual.reference,
-                                                         cp.id))
-        if sr_bnd.total == 0:
-            raise Exception(f'No ServiceRequest found for {cp.id}')
-        sd = sr_bnd.entry[0].resource  # type: ServiceRequest
-        # get the encounter
-        enc_bnd = self._get("Encounter?patient={}&based-on=ServiceRequest/{}".format(
-            research_subject.individual.reference, sd.id))
-        enc = enc_bnd.entry[0].resource  # type: Encounter
+        enc = self.get_encounter_for_subject(subject_id, idx_pd.id)
+        # Identify the visit date for the epoch
         index_date = enc.period.start   # type: datetime.date
         for visit, offsets in protocol.items():
             qtext = []
-
+            _enc = self.get_encounter_for_subject(subject_id, visit)
+            if _enc.period.start == _enc.period.end:
+                offsets["datematch"] = f"eq{_enc.period.start.date().isoformat()}"
             if offsets["is_index"] is True:
                 qtext = [f"eq{index_date.date().isoformat()}"]
             else:
@@ -234,5 +252,15 @@ class StudyWindow:
                     else:
                         _tgt = (index_date - delta).date().isoformat()
                         qtext.append(f"le{_tgt}")
-            offsets["datequery"] = "&date=".join(qtext)
+            offsets["datequery"] = "&date=".join(qtext) if qtext else ""
             print(f"{visit} Query: {offsets['datequery']}",)
+        for visit, offset in protocol.items():
+            print("Visit:", visit)
+            for resource in ("Observation", "Procedure", "AdverseEvent"):
+                if offset["datequery"]:
+                    _dq = offset["datequery"]
+                else:
+                    _dq = offset["datematch"]
+                res = self._get(f"{resource}?patient={research_subject.individual.reference}&date={_dq}")  # type: Bundle
+                print(f"{resource} - Total Count {res.total}")
+
