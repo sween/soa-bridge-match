@@ -1,0 +1,43 @@
+key:
+  - USUBJID
+columns:
+  STUDYID:
+  DOMAIN:
+  USUBJID:
+  SUBJID:
+    ResearchSubject:
+      identfier
+  RFSTDTC:
+  RFENDTC:
+  RFXSTDTC:
+  RFXENDTC:
+  RFICDTC:
+  RFPENDTC:
+  DTHDTC:
+  DTHFL:
+  SITEID:
+  INVID:
+  INVNAM:
+  BRTHDTC:
+    Patient:
+      birthDate
+  AGE:
+  AGEU:
+  SEX:
+    Patient:
+      gender:
+        maps:
+          MALE: male
+          FEMALE: female
+  RACE:
+  ETHNIC:
+  ARMCD:
+  ARM:
+  ACTARMCD:
+  ACTARM:
+  COUNTRY:
+    Patient:
+      address:
+        country
+  DMDTC:
+  DMDY:

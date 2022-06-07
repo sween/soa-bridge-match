@@ -28,6 +28,12 @@ In this case the subject bundles are in the `subjects` subdirectory.
 python add_visits.py subjects
 ```
 
+## Cloning a Research Subject
+A subject bundle can be cloned into a new file using the following command:
+
+```shell
+python clone_subject.py --subject-id 01-701-9998 subjects/LZZT_FHIR_Bundle_01-701-1118_All_Resources.json
+```
 
 ## Synthea Data
 
