@@ -13,5 +13,5 @@ def run(subject_id, study_id="H2Q-MC-LZZT"):
 
 if __name__ == '__main__':
     STUDY_ID = "H2Q-MC-LZZT"
-    SUBJECT_ID = "01-701-1111"
+    SUBJECT_ID = "01-701-1047"
     run(SUBJECT_ID, STUDY_ID)
