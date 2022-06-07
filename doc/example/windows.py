@@ -220,9 +220,14 @@ class StudyWindow:
         index_date = enc.period.start   # type: datetime.date
         for visit, offsets in protocol.items():
             qtext = []
-            _enc = self.get_encounter_for_subject(subject_id, visit)
-            if _enc.period.start == _enc.period.end:
-                offsets["datematch"] = f"eq{_enc.period.start.date().isoformat()}"
+            try:
+                _enc = self.get_encounter_for_subject(subject_id, visit)
+                if _enc.period.start == _enc.period.end:
+                    offsets["datematch"] = f"eq{_enc.period.start.date().isoformat()}"
+            except Exception as exc:
+                print(f"Unable to find visit {visit}")
+                offsets["skip"] = True
+
             if offsets["is_index"] is True:
                 qtext = [f"eq{index_date.date().isoformat()}"]
             else:
@@ -255,12 +260,17 @@ class StudyWindow:
             offsets["datequery"] = "&date=".join(qtext) if qtext else ""
             print(f"{visit} Query: {offsets['datequery']}",)
         for visit, offset in protocol.items():
-            print("Visit:", visit)
-            for resource in ("Observation", "Procedure", "AdverseEvent"):
+            if offset.get('skip', False):
+                print(f"Skipping {visit}")
+                continue
+            state = {}
+            for resource in ("Observation", "Procedure", "AdverseEvent", "MedicationStatement"):
                 if offset["datequery"]:
                     _dq = offset["datequery"]
                 else:
                     _dq = offset["datematch"]
                 res = self._get(f"{resource}?patient={research_subject.individual.reference}&date={_dq}")  # type: Bundle
-                print(f"{resource} - Total Count {res.total}")
-
+                if res:
+                    state[resource] = res.total
+            print("Visit:", visit)
+            print("\t".join(f"{x}: {y}" for x, y in state.items()))
