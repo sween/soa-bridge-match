@@ -222,8 +222,18 @@ class StudyWindow:
             qtext = []
             try:
                 _enc = self.get_encounter_for_subject(subject_id, visit)
-                if _enc.period.start == _enc.period.end:
-                    offsets["datematch"] = f"eq{_enc.period.start.date().isoformat()}"
+                if _enc.period:
+                    if _enc.period.start == _enc.period.end:
+                        offsets["encounter_date"] = _enc.period.start.date()
+                        offsets["datematch"] = f"eq{_enc.period.start.date().isoformat()}"
+                    else:
+                        if _enc.period.start and _enc.period.end:
+                            offsets["encounter_date"] = _enc.period.start.date()
+                            offsets["datematch"] = "&date=".join([f"ge{_enc.period.start.date().isoformat()}",
+                                                                 f"le{_enc.period.end.date().isoformat()}"])
+                        else:
+                            offsets["encounter_date"] = _enc.period.start.date()
+                            offsets["datematch"] = f"eq{_enc.period.start.date().isoformat()}"
             except Exception as exc:
                 print(f"Unable to find visit {visit}")
                 offsets["skip"] = True
@@ -272,5 +282,5 @@ class StudyWindow:
                 res = self._get(f"{resource}?patient={research_subject.individual.reference}&date={_dq}")  # type: Bundle
                 if res:
                     state[resource] = res.total
-            print("Visit:", visit)
+            print(f"Visit: {visit} ({offset['encounter_date']})")
             print("\t".join(f"{x}: {y}" for x, y in state.items()))
