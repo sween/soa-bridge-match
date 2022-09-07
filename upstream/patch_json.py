@@ -5,6 +5,7 @@ import sys
 import uuid
 from datetime import datetime
 
+sys.path.append('../src')
 """
 This script does some elementary patching of the JSON files from the upstream
 - adds a transaction type to the Bundle
