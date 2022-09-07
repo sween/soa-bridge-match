@@ -1,5 +1,8 @@
 import os
 import argparse
+import sys
+# setting path
+sys.path.append('../src')
 
 from soa_bridge_match import dataset
 
