@@ -5,7 +5,7 @@ from pandas import DataFrame
 
 # define a prefix for the CDISC Pilot Datasets
 PREFIX = "https://github.com/phuse-org/phuse-scripts/raw/master/data/sdtm/cdiscpilot01/"
-
+PREFIX_UPDATED = "https://raw.githubusercontent.com/phuse-org/phuse-scripts/master/data/sdtm/updated_cdiscpilot/"
 
 def check_link(url: str) -> bool:
     """
@@ -44,14 +44,16 @@ class Connector:
 
         return self.__exists[domain_prefix]
 
-    def load_cdiscpilot_dataset(self, domain_prefix: str) -> Optional[DataFrame]:
+    def load_cdiscpilot_dataset(self, domain_prefix: str, updated: bool = False) -> Optional[DataFrame]:
         """
         load a CDISC Pilot Dataset from the GitHub site
         @param domain_prefix: the Domain Prefix for the Domain (eg DM, VS)
+        @param updated: if True, load the updated version of the dataset
         """
+        _prefix = PREFIX_UPDATED if updated else PREFIX
         if domain_prefix not in self.__cache:
             # define the target for our read_sas directive
-            target = f"{PREFIX}{domain_prefix.lower()}.xpt"
+            target = f"{_prefix}{domain_prefix.lower()}.xpt"
             # make sure that the URL exists first
             if check_link(target):
                 # let pandas work it out

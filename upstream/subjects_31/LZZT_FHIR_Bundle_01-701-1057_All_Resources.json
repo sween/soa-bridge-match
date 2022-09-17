@@ -1,0 +1,5185 @@
+{
+ "resourceType": "Bundle",
+ "id": "26236c82-0c38-44d2-97f1-7e96019436fa",
+ "meta": {
+  "lastUpdated": "2022-09-17T11:11:12+00:00"
+ },
+ "type": "transaction",
+ "entry": [
+  {
+   "resource": {
+    "resourceType": "ResearchSubject",
+    "id": "01-701-1057",
+    "status": "ineligible",
+    "study": {
+     "reference": "ResearchStudy/H2Q-MC-LZZT-ResearchStudy"
+    },
+    "individual": {
+     "reference": "Patient/d627c29b5e5bc6b2a94fe4ff4c67830a"
+    },
+    "assignedArm": "Screen Failure",
+    "actualArm": "Screen Failure"
+   },
+   "request": {
+    "method": "PUT",
+    "url": "ResearchSubject/01-701-1057",
+    "ifNoneExist": "identifier=01-701-1057"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Patient",
+    "id": "d627c29b5e5bc6b2a94fe4ff4c67830a",
+    "extension": [
+     {
+      "extension": [
+       {
+        "url": "detailed",
+        "valueCoding": {
+         "system": "urn:oid:2.16.840.1.113883.6.238",
+         "code": "2106-3",
+         "display": "White"
+        }
+       }
+      ],
+      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race"
+     },
+     {
+      "extension": [
+       {
+        "url": "detailed",
+        "valueCoding": {
+         "system": "urn:oid:2.16.840.1.113883.6.238",
+         "code": "2135-2",
+         "display": "Hispanic or Latino"
+        }
+       }
+      ],
+      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
+     },
+     {
+      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
+      "valueCode": "F"
+     }
+    ],
+    "gender": "female",
+    "managingOrganization": {
+     "reference": "Organization/b4a528955b84f584974e92d025a75d1f"
+    }
+   },
+   "request": {
+    "method": "PUT",
+    "url": "Patient/d627c29b5e5bc6b2a94fe4ff4c67830a",
+    "ifNoneExist": "identifier=d627c29b5e5bc6b2a94fe4ff4c67830a"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Medication",
+    "id": "H2Q-MC-LZZT-LY246708-IP",
+    "code": {
+     "coding": [
+      {
+       "system": "https://iwrs.lilly.com/",
+       "code": "9999",
+       "display": "Blinded Study Treatment"
+      }
+     ],
+     "text": "Blinded Study Treatment"
+    }
+   },
+   "request": {
+    "method": "PUT",
+    "url": "Medication/H2Q-MC-LZZT-LY246708-IP",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-LY246708-IP"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Medication",
+    "id": "H2Q-MC-LZZT-LY246708-Placebo-TTS",
+    "code": {
+     "coding": [
+      {
+       "system": "https://iwrs.lilly.com/",
+       "code": "8375",
+       "display": "Placebo"
+      }
+     ],
+     "text": "Placebo"
+    },
+    "form": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "385114002",
+       "display": "Transdermal patch"
+      }
+     ],
+     "text": "Transdermal patch"
+    }
+   },
+   "request": {
+    "method": "PUT",
+    "url": "Medication/H2Q-MC-LZZT-LY246708-Placebo-TTS",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-LY246708-Placebo-TTS"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Medication",
+    "id": "H2Q-MC-LZZT-LY246708-Placebo",
+    "code": {
+     "coding": [
+      {
+       "system": "https://iwrs.lilly.com/",
+       "code": "8375",
+       "display": "Placebo"
+      }
+     ],
+     "text": "Placebo"
+    },
+    "form": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "385114002",
+       "display": "Transdermal patch"
+      }
+     ],
+     "text": "Transdermal patch"
+    }
+   },
+   "request": {
+    "method": "PUT",
+    "url": "Medication/H2Q-MC-LZZT-LY246708-Placebo",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-LY246708-Placebo"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Medication",
+    "id": "H2Q-MC-LZZT-LY246708-1",
+    "code": {
+     "coding": [
+      {
+       "system": "https://iwrs.lilly.com/",
+       "code": "H2Q-MC-LZZT-LY246708-1",
+       "display": "H2Q-MC-LZZT-LY246708-1"
+      }
+     ],
+     "text": "H2Q-MC-LZZT-LY246708-1"
+    },
+    "form": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "385114002",
+       "display": "Transdermal patch"
+      }
+     ],
+     "text": "Transdermal patch"
+    }
+   },
+   "request": {
+    "method": "PUT",
+    "url": "Medication/H2Q-MC-LZZT-LY246708-1",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-LY246708-1"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Medication",
+    "id": "H2Q-MC-LZZT-LY246708-2",
+    "code": {
+     "coding": [
+      {
+       "system": "https://iwrs.lilly.com/",
+       "code": "H2Q-MC-LZZT-LY246708-2",
+       "display": "H2Q-MC-LZZT-LY246708-2"
+      }
+     ],
+     "text": "H2Q-MC-LZZT-LY246708-2"
+    },
+    "form": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "385114002",
+       "display": "Transdermal patch"
+      }
+     ],
+     "text": "Transdermal patch"
+    }
+   },
+   "request": {
+    "method": "PUT",
+    "url": "Medication/H2Q-MC-LZZT-LY246708-2",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-LY246708-2"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Medication",
+    "id": "H2Q-MC-LZZT-LY246708-3",
+    "code": {
+     "coding": [
+      {
+       "system": "https://iwrs.lilly.com/",
+       "code": "H2Q-MC-LZZT-LY246708-3",
+       "display": "H2Q-MC-LZZT-LY246708-3"
+      }
+     ],
+     "text": "H2Q-MC-LZZT-LY246708-3"
+    },
+    "form": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "385114002",
+       "display": "Transdermal patch"
+      }
+     ],
+     "text": "Transdermal patch"
+    }
+   },
+   "request": {
+    "method": "PUT",
+    "url": "Medication/H2Q-MC-LZZT-LY246708-3",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-LY246708-3"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "ActivityDefinition",
+    "id": "H2Q-MC-LZZT-Placebo-TTS-Admin",
+    "text": {
+     "status": "generated",
+     "div": "Created by Vulcan SoA team"
+    },
+    "contained": [
+     {
+      "resourceType": "Medication",
+      "id": "H2Q-MC-LZZT-LY246708-Placebo-TTS",
+      "code": {
+       "coding": [
+        {
+         "system": "https://iwrs.lilly.com/",
+         "code": "8375",
+         "display": "Placebo"
+        }
+       ],
+       "text": "Placebo"
+      },
+      "form": {
+       "coding": [
+        {
+         "system": "http://snomed.info/sct",
+         "code": "385114002",
+         "display": "Transdermal patch"
+        }
+       ],
+       "text": "Transdermal patch"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "use": "temp",
+      "system": "https://sourceforge.net/projects/fhirloinc2sdtm/",
+      "value": "H2Q-MC-LZZT-Placebo-TTS-Admin"
+     }
+    ],
+    "version": "1.0.0",
+    "name": "H2Q-MC-LZZT-Placebo-TTS-Admin",
+    "title": "H2Q-MC-LZZT-Placebo-TTS-Admin",
+    "status": "active",
+    "experimental": true,
+    "date": "2022-08-24T09:10:36.744000+01:00",
+    "publisher": "Eli Lilly and Company",
+    "contact": [
+     {
+      "name": "Eli Lilly and Company",
+      "telecom": [
+       {
+        "system": "phone",
+        "value": "+1-877-285-4559",
+        "use": "work"
+       }
+      ]
+     }
+    ],
+    "description": "Transdermal Therapeutic System Test patch transdermal 1 time only",
+    "useContext": [
+     {
+      "code": {
+       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+       "code": "age",
+       "display": "Age"
+      },
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/age-group",
+         "code": "adult",
+         "display": "Adult"
+        }
+       ],
+       "text": "Adult"
+      }
+     }
+    ],
+    "jurisdiction": [
+     {
+      "coding": [
+       {
+        "system": "urn:iso:std:iso:3166",
+        "code": "US",
+        "display": "United States of America"
+       }
+      ],
+      "text": "United States of America"
+     }
+    ],
+    "purpose": "To assess the safety of the Transdermal Therapeutic System (TTS) used to administer Xanomeline or Placebo in patients with Mild to Moderate Alzheimer\u2019s Disease.",
+    "usage": "This activity definition is used to articulate the planned activity to assess the safety of the Transdermal Therapeutic System (TTS) used to administer Xanomeline or Placebo in patients with Mild to Moderate Alzheimer\u2019s Disease.",
+    "copyright": "\u00a9 Copyright 2006 Eli Lilly and Company. All rights reserved.",
+    "approvalDate": "2022-08-24",
+    "lastReviewDate": "2022-08-24",
+    "effectivePeriod": {
+     "start": "2012-07-01",
+     "end": "2015-03-30"
+    },
+    "topic": [
+     {
+      "text": "Treatment of Mild to Moderate Alzheimer\u2019s Disease"
+     }
+    ],
+    "author": [
+     {
+      "name": "Eli Lilly and Company",
+      "telecom": [
+       {
+        "system": "phone",
+        "value": "+1-877-285-4559",
+        "use": "work"
+       }
+      ]
+     }
+    ],
+    "kind": "MedicationRequest",
+    "productReference": {
+     "reference": "Medication/TTSPlaceboPatch"
+    },
+    "dosage": [
+     {
+      "text": "Transdermal Therapeutic System Test patch transdermal 1 time only",
+      "patientInstruction": "Administer one time",
+      "timing": {
+       "repeat": {
+        "frequency": 1,
+        "period": 1,
+        "periodUnit": "d"
+       }
+      },
+      "site": {
+       "coding": [
+        {
+         "system": "http://snomed.info/sct",
+         "code": "371309009",
+         "display": "Skin structure of upper arm"
+        }
+       ],
+       "text": "Skin structure of upper arm"
+      },
+      "route": {
+       "coding": [
+        {
+         "system": "http://snomed.info/sct",
+         "code": "45890007",
+         "display": "Transdermal route"
+        }
+       ],
+       "text": "Transdermal route"
+      },
+      "doseAndRate": [
+       {
+        "type": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+           "code": "ordered",
+           "display": "Ordered"
+          }
+         ],
+         "text": "Ordered"
+        },
+        "doseQuantity": {
+         "value": 1,
+         "unit": "patch",
+         "system": "http://unitsofmeasure.org",
+         "code": "patch"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "ActivityDefinition/H2Q-MC-LZZT-Placebo-TTS-Admin",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Placebo-TTS-Admin"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "ActivityDefinition",
+    "id": "H2Q-MC-LZZT-IP-Administration-BlindedDoseStrength1",
+    "text": {
+     "status": "generated",
+     "div": "Created by Vulcan SoA team"
+    },
+    "contained": [
+     {
+      "resourceType": "Medication",
+      "id": "H2Q-MC-LZZT-LY246708-1",
+      "code": {
+       "coding": [
+        {
+         "system": "https://iwrs.lilly.com/",
+         "code": "H2Q-MC-LZZT-LY246708-1",
+         "display": "H2Q-MC-LZZT-LY246708-1"
+        }
+       ],
+       "text": "H2Q-MC-LZZT-LY246708-1"
+      },
+      "form": {
+       "coding": [
+        {
+         "system": "http://snomed.info/sct",
+         "code": "385114002",
+         "display": "Transdermal patch"
+        }
+       ],
+       "text": "Transdermal patch"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "use": "temp",
+      "system": "https://sourceforge.net/projects/fhirloinc2sdtm/",
+      "value": "H2Q-MC-LZZT-IP-Administration-1"
+     }
+    ],
+    "version": "1.0.0",
+    "name": "H2Q-MC-LZZT-IP-Administration-1",
+    "title": "H2Q-MC-LZZT-IP-Administration-1",
+    "status": "active",
+    "experimental": true,
+    "date": "2022-08-24T09:10:36.744000+01:00",
+    "publisher": "Eli Lilly and Company",
+    "contact": [
+     {
+      "name": "Eli Lilly and Company",
+      "telecom": [
+       {
+        "system": "phone",
+        "value": "+1-877-285-4559",
+        "use": "work"
+       }
+      ]
+     }
+    ],
+    "description": "H2Q-MC-LZZT-LY246708 2 patches transdermal daily blinded dose strength 1 (28 patches; 0 refills)",
+    "useContext": [
+     {
+      "code": {
+       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+       "code": "age",
+       "display": "Age"
+      },
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/age-group",
+         "code": "adult",
+         "display": "Adult"
+        }
+       ],
+       "text": "Adult"
+      }
+     }
+    ],
+    "jurisdiction": [
+     {
+      "coding": [
+       {
+        "system": "urn:iso:std:iso:3166",
+        "code": "US",
+        "display": "United States of America"
+       }
+      ],
+      "text": "United States of America"
+     }
+    ],
+    "purpose": "To assess the safety of the Transdermal Therapeutic System (TTS) used to administer Xanomeline or Placebo in patients with Mild to Moderate Alzheimer\u2019s Disease.",
+    "usage": "This activity definition is used to articulate the planned activity to assess the safety of the Transdermal Therapeutic System (TTS) used to administer Xanomeline or Placebo in patients with Mild to Moderate Alzheimer\u2019s Disease.",
+    "copyright": "\u00a9 Copyright 2006 Eli Lilly and Company. All rights reserved.",
+    "approvalDate": "2022-08-24",
+    "lastReviewDate": "2022-08-24",
+    "effectivePeriod": {
+     "start": "2012-07-01",
+     "end": "2015-03-30"
+    },
+    "topic": [
+     {
+      "text": "Treatment of Mild to Moderate Alzheimer\u2019s Disease"
+     }
+    ],
+    "author": [
+     {
+      "name": "Eli Lilly and Company",
+      "telecom": [
+       {
+        "system": "phone",
+        "value": "+1-877-285-4559",
+        "use": "work"
+       }
+      ]
+     }
+    ],
+    "kind": "MedicationRequest",
+    "productReference": {
+     "reference": "Medication/H2Q-MC-LZZT-LY246708-1"
+    },
+    "dosage": [
+     {
+      "text": "2 patches transdermal 1 time daily for 12-14 hours",
+      "patientInstruction": "Each Sunday, apply patch to Skin structure of upper arm (Skin structure of upper arm).  Each Monday, apply patch to Skin structure of upper back (Skin structure of upper back).  Each Tuesday, apply patch to Skin structure of lower back (Skin structure of lower back).  Each Wednesday, apply patch to Skin structure of buttock (Skin structure of buttock).  Each Thursday, apply patch to Skin structure of posterior axillary line (Skin structure of posterior axillary line).  Each Friday, apply patch to Skin structure of upper thigh region (Skin structure of upper thigh region).  Each Saturday, apply patch to Skin structure of upper chest wall (Skin structure of upper chest wall).",
+      "timing": {
+       "repeat": {
+        "duration": 12,
+        "durationMax": 14,
+        "durationUnit": "h",
+        "frequency": 1,
+        "period": 1,
+        "periodUnit": "d",
+        "timeOfDay": [
+         "08:00:00"
+        ]
+       }
+      },
+      "site": {
+       "coding": [
+        {
+         "system": "http://snomed.info/sct",
+         "code": "39937001",
+         "display": "Skin structure"
+        }
+       ],
+       "text": "Skin structure"
+      },
+      "route": {
+       "coding": [
+        {
+         "system": "http://snomed.info/sct",
+         "code": "45890007",
+         "display": "Transdermal route"
+        }
+       ],
+       "text": "Transdermal route"
+      },
+      "doseAndRate": [
+       {
+        "type": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+           "code": "ordered",
+           "display": "Ordered"
+          }
+         ],
+         "text": "Ordered"
+        },
+        "doseQuantity": {
+         "value": 1,
+         "unit": "patch",
+         "system": "http://unitsofmeasure.org",
+         "code": "patch"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "ActivityDefinition/H2Q-MC-LZZT-IP-Administration-BlindedDoseStrength1",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-IP-Administration-BlindedDoseStrength1"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "ActivityDefinition",
+    "id": "H2Q-MC-LZZT-IP-Administration-BlindedDoseStrength2",
+    "text": {
+     "status": "generated",
+     "div": "Created by Vulcan SoA team"
+    },
+    "contained": [
+     {
+      "resourceType": "Medication",
+      "id": "H2Q-MC-LZZT-LY246708-2",
+      "code": {
+       "coding": [
+        {
+         "system": "https://iwrs.lilly.com/",
+         "code": "H2Q-MC-LZZT-LY246708-2",
+         "display": "H2Q-MC-LZZT-LY246708-2"
+        }
+       ],
+       "text": "H2Q-MC-LZZT-LY246708-2"
+      },
+      "form": {
+       "coding": [
+        {
+         "system": "http://snomed.info/sct",
+         "code": "385114002",
+         "display": "Transdermal patch"
+        }
+       ],
+       "text": "Transdermal patch"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "use": "temp",
+      "system": "https://sourceforge.net/projects/fhirloinc2sdtm/",
+      "value": "H2Q-MC-LZZT-IP-Administration-2"
+     }
+    ],
+    "version": "1.0.0",
+    "name": "H2Q-MC-LZZT-IP-Administration-2",
+    "title": "H2Q-MC-LZZT-IP-Administration-2",
+    "status": "active",
+    "experimental": true,
+    "date": "2022-08-24",
+    "publisher": "Eli Lilly and Company",
+    "contact": [
+     {
+      "name": "Eli Lilly and Company",
+      "telecom": [
+       {
+        "system": "phone",
+        "value": "+1-877-285-4559",
+        "use": "work"
+       }
+      ]
+     }
+    ],
+    "description": "H2Q-MC-LZZT-LY246708 2 patches transdermal daily blinded dose strength 2 (308 patches; 0 refills)",
+    "useContext": [
+     {
+      "code": {
+       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+       "code": "age",
+       "display": "Age"
+      },
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/age-group",
+         "code": "adult",
+         "display": "Adult"
+        }
+       ],
+       "text": "Adult"
+      }
+     }
+    ],
+    "jurisdiction": [
+     {
+      "coding": [
+       {
+        "system": "urn:iso:std:iso:3166",
+        "code": "US",
+        "display": "United States of America"
+       }
+      ],
+      "text": "United States of America"
+     }
+    ],
+    "purpose": "To assess the safety of the Transdermal Therapeutic System (TTS) used to administer Xanomeline or Placebo in patients with Mild to Moderate Alzheimer\u2019s Disease.",
+    "usage": "This activity definition is used to articulate the planned activity to assess the safety of the Transdermal Therapeutic System (TTS) used to administer Xanomeline or Placebo in patients with Mild to Moderate Alzheimer\u2019s Disease.",
+    "copyright": "\u00a9 Copyright 2006 Eli Lilly and Company. All rights reserved.",
+    "approvalDate": "2022-08-24",
+    "lastReviewDate": "2022-08-24",
+    "effectivePeriod": {
+     "start": "2012-07-01",
+     "end": "2015-03-30"
+    },
+    "topic": [
+     {
+      "text": "Treatment of Mild to Moderate Alzheimer\u2019s Disease"
+     }
+    ],
+    "author": [
+     {
+      "name": "Eli Lilly and Company",
+      "telecom": [
+       {
+        "system": "phone",
+        "value": "+1-877-285-4559",
+        "use": "work"
+       }
+      ]
+     }
+    ],
+    "kind": "MedicationRequest",
+    "productReference": {
+     "reference": "Medication/H2Q-MC-LZZT-LY246708-2"
+    },
+    "dosage": [
+     {
+      "text": "2 patches transdermal 1 time daily for 12-14 hours",
+      "patientInstruction": "Each Sunday, apply patch to Skin structure of upper arm (Skin structure of upper arm).  Each Monday, apply patch to Skin structure of upper back (Skin structure of upper back).  Each Tuesday, apply patch to Skin structure of lower back (Skin structure of lower back).  Each Wednesday, apply patch to Skin structure of buttock (Skin structure of buttock).  Each Thursday, apply patch to Skin structure of posterior axillary line (Skin structure of posterior axillary line).  Each Friday, apply patch to Skin structure of upper thigh region (Skin structure of upper thigh region).  Each Saturday, apply patch to Skin structure of upper chest wall (Skin structure of upper chest wall).",
+      "timing": {
+       "repeat": {
+        "duration": 12,
+        "durationMax": 14,
+        "durationUnit": "h",
+        "frequency": 1,
+        "period": 1,
+        "periodUnit": "d",
+        "timeOfDay": [
+         "08:00:00"
+        ]
+       }
+      },
+      "site": {
+       "coding": [
+        {
+         "system": "http://snomed.info/sct",
+         "code": "39937001",
+         "display": "Skin structure"
+        }
+       ],
+       "text": "Skin structure"
+      },
+      "route": {
+       "coding": [
+        {
+         "system": "http://snomed.info/sct",
+         "code": "45890007",
+         "display": "Transdermal route"
+        }
+       ],
+       "text": "Transdermal route"
+      },
+      "doseAndRate": [
+       {
+        "type": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+           "code": "ordered",
+           "display": "Ordered"
+          }
+         ],
+         "text": "Ordered"
+        },
+        "doseQuantity": {
+         "value": 2,
+         "unit": "patch",
+         "system": "http://unitsofmeasure.org",
+         "code": "patch"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "ActivityDefinition/H2Q-MC-LZZT-IP-Administration-BlindedDoseStrength2",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-IP-Administration-BlindedDoseStrength2"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "ActivityDefinition",
+    "id": "H2Q-MC-LZZT-IP-Administration-BlindedDoseStrength3",
+    "text": {
+     "status": "generated",
+     "div": "Created by Vulcan SoA Team"
+    },
+    "contained": [
+     {
+      "resourceType": "Medication",
+      "id": "H2Q-MC-LZZT-LY246708-3",
+      "code": {
+       "coding": [
+        {
+         "system": "https://iwrs.lilly.com/",
+         "code": "H2Q-MC-LZZT-LY246708-3",
+         "display": "H2Q-MC-LZZT-LY246708-3"
+        }
+       ],
+       "text": "H2Q-MC-LZZT-LY246708-3"
+      },
+      "form": {
+       "coding": [
+        {
+         "system": "http://snomed.info/sct",
+         "code": "385114002",
+         "display": "Transdermal patch"
+        }
+       ],
+       "text": "Transdermal patch"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "use": "temp",
+      "system": "https://sourceforge.net/projects/fhirloinc2sdtm/",
+      "value": "H2Q-MC-LZZT-IP-Administration-3"
+     }
+    ],
+    "version": "1.0.0",
+    "name": "H2Q-MC-LZZT-IP-Administration-3",
+    "title": "H2Q-MC-LZZT-IP-Administration-3",
+    "status": "active",
+    "experimental": true,
+    "date": "2022-08-24",
+    "publisher": "Eli Lilly and Company",
+    "contact": [
+     {
+      "name": "Eli Lilly and Company",
+      "telecom": [
+       {
+        "system": "phone",
+        "value": "+1-877-285-4559",
+        "use": "work"
+       }
+      ]
+     }
+    ],
+    "description": "H2Q-MC-LZZT-LY246708 2 patches transdermal daily blinded dose strength 3 (28 patches; 0 refills)",
+    "useContext": [
+     {
+      "code": {
+       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+       "code": "age",
+       "display": "Age"
+      },
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/age-group",
+         "code": "adult",
+         "display": "Adult"
+        }
+       ],
+       "text": "Adult"
+      }
+     }
+    ],
+    "jurisdiction": [
+     {
+      "coding": [
+       {
+        "system": "urn:iso:std:iso:3166",
+        "code": "US",
+        "display": "United States of America"
+       }
+      ],
+      "text": "United States of America"
+     }
+    ],
+    "purpose": "To assess the safety of the Transdermal Therapeutic System (TTS) used to administer Xanomeline or Placebo in patients with Mild to Moderate Alzheimer\u2019s Disease.",
+    "usage": "This activity definition is used to articulate the planned activity to assess the safety of the Transdermal Therapeutic System (TTS) used to administer Xanomeline or Placebo in patients with Mild to Moderate Alzheimer\u2019s Disease.",
+    "copyright": "\u00a9 Copyright 2006 Eli Lilly and Company. All rights reserved.",
+    "approvalDate": "2022-08-24",
+    "lastReviewDate": "2022-08-24",
+    "effectivePeriod": {
+     "start": "2012-07-01",
+     "end": "2015-03-30"
+    },
+    "topic": [
+     {
+      "text": "Treatment of Mild to Moderate Alzheimer\u2019s Disease"
+     }
+    ],
+    "author": [
+     {
+      "name": "Eli Lilly and Company",
+      "telecom": [
+       {
+        "system": "phone",
+        "value": "+1-877-285-4559",
+        "use": "work"
+       }
+      ]
+     }
+    ],
+    "kind": "MedicationRequest",
+    "productReference": {
+     "reference": "Medication/H2Q-MC-LZZT-LY246708-3"
+    },
+    "dosage": [
+     {
+      "text": "2 patches transdermal 1 time daily for 12-14 hours",
+      "patientInstruction": "Each Sunday, apply patch to Skin structure of upper arm (Skin structure of upper arm).  Each Monday, apply patch to Skin structure of upper back (Skin structure of upper back).  Each Tuesday, apply patch to Skin structure of lower back (Skin structure of lower back).  Each Wednesday, apply patch to Skin structure of buttock (Skin structure of buttock).  Each Thursday, apply patch to Skin structure of posterior axillary line (Skin structure of posterior axillary line).  Each Friday, apply patch to Skin structure of upper thigh region (Skin structure of upper thigh region).  Each Saturday, apply patch to Skin structure of upper chest wall (Skin structure of upper chest wall).",
+      "timing": {
+       "repeat": {
+        "duration": 12,
+        "durationMax": 14,
+        "durationUnit": "h",
+        "frequency": 1,
+        "period": 1,
+        "periodUnit": "d",
+        "timeOfDay": [
+         "08:00:00"
+        ]
+       }
+      },
+      "site": {
+       "coding": [
+        {
+         "system": "http://snomed.info/sct",
+         "code": "39937001",
+         "display": "Skin structure"
+        }
+       ],
+       "text": "Skin structure"
+      },
+      "route": {
+       "coding": [
+        {
+         "system": "http://snomed.info/sct",
+         "code": "45890007",
+         "display": "Transdermal route"
+        }
+       ],
+       "text": "Transdermal route"
+      },
+      "doseAndRate": [
+       {
+        "type": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+           "code": "ordered",
+           "display": "Ordered"
+          }
+         ],
+         "text": "Ordered"
+        },
+        "doseQuantity": {
+         "value": 2,
+         "unit": "patch",
+         "system": "http://unitsofmeasure.org",
+         "code": "patch"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "ActivityDefinition/H2Q-MC-LZZT-IP-Administration-BlindedDoseStrength3",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-IP-Administration-BlindedDoseStrength3"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "ActivityDefinition",
+    "id": "H2Q-MC-LZZT-IP-Administration",
+    "text": {
+     "status": "generated",
+     "div": "Created by Vulcan SoA Team"
+    },
+    "contained": [
+     {
+      "resourceType": "Medication",
+      "id": "H2Q-MC-LZZT-LY246708-IP",
+      "code": {
+       "coding": [
+        {
+         "system": "https://iwrs.lilly.com/",
+         "code": "H2Q-MC-LZZT-LY246708-IP",
+         "display": "H2Q-MC-LZZT-LY246708-IP"
+        }
+       ],
+       "text": "H2Q-MC-LZZT-LY246708-IP"
+      },
+      "form": {
+       "coding": [
+        {
+         "system": "http://snomed.info/sct",
+         "code": "385114002",
+         "display": "Transdermal patch"
+        }
+       ],
+       "text": "Transdermal patch"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "use": "temp",
+      "system": "https://sourceforge.net/projects/fhirloinc2sdtm/",
+      "value": "H2Q-MC-LZZT-IP-Administration-IP"
+     }
+    ],
+    "version": "1.0.0",
+    "name": "H2Q-MC-LZZT-IP-Administration-IP",
+    "title": "H2Q-MC-LZZT-IP-Administration-IP",
+    "status": "active",
+    "experimental": true,
+    "date": "2022-08-24",
+    "publisher": "Eli Lilly and Company",
+    "contact": [
+     {
+      "name": "Eli Lilly and Company",
+      "telecom": [
+       {
+        "system": "phone",
+        "value": "+1-877-285-4559",
+        "use": "work"
+       }
+      ]
+     }
+    ],
+    "description": "H2Q-MC-LZZT-LY246708 2 patches transdermal daily blinded dose",
+    "useContext": [
+     {
+      "code": {
+       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+       "code": "age",
+       "display": "Age"
+      },
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/age-group",
+         "code": "adult",
+         "display": "Adult"
+        }
+       ],
+       "text": "Adult"
+      }
+     }
+    ],
+    "jurisdiction": [
+     {
+      "coding": [
+       {
+        "system": "urn:iso:std:iso:3166",
+        "code": "US",
+        "display": "United States of America"
+       }
+      ],
+      "text": "United States of America"
+     }
+    ],
+    "purpose": "To assess the safety of the Transdermal Therapeutic System (TTS) used to administer Xanomeline or Placebo in patients with Mild to Moderate Alzheimer\u2019s Disease.",
+    "usage": "This activity definition is used to articulate the planned activity to assess the safety of the Transdermal Therapeutic System (TTS) used to administer Xanomeline or Placebo in patients with Mild to Moderate Alzheimer\u2019s Disease.",
+    "copyright": "\u00a9 Copyright 2006 Eli Lilly and Company. All rights reserved.",
+    "approvalDate": "2022-08-24",
+    "lastReviewDate": "2022-08-24",
+    "effectivePeriod": {
+     "start": "2012-07-01",
+     "end": "2015-03-30"
+    },
+    "topic": [
+     {
+      "text": "Treatment of Mild to Moderate Alzheimer\u2019s Disease"
+     }
+    ],
+    "author": [
+     {
+      "name": "Eli Lilly and Company",
+      "telecom": [
+       {
+        "system": "phone",
+        "value": "+1-877-285-4559",
+        "use": "work"
+       }
+      ]
+     }
+    ],
+    "kind": "MedicationRequest",
+    "productReference": {
+     "reference": "Medication/H2Q-MC-LZZT-LY246708-IP"
+    },
+    "dosage": [
+     {
+      "text": "2 patches transdermal 1 time daily for 12-14 hours",
+      "patientInstruction": "Each Sunday, apply patch to Skin structure of upper arm (Skin structure of upper arm).  Each Monday, apply patch to Skin structure of upper back (Skin structure of upper back).  Each Tuesday, apply patch to Skin structure of lower back (Skin structure of lower back).  Each Wednesday, apply patch to Skin structure of buttock (Skin structure of buttock).  Each Thursday, apply patch to Skin structure of posterior axillary line (Skin structure of posterior axillary line).  Each Friday, apply patch to Skin structure of upper thigh region (Skin structure of upper thigh region).  Each Saturday, apply patch to Skin structure of upper chest wall (Skin structure of upper chest wall).",
+      "timing": {
+       "repeat": {
+        "duration": 12,
+        "durationMax": 14,
+        "durationUnit": "h",
+        "frequency": 1,
+        "period": 1,
+        "periodUnit": "d",
+        "timeOfDay": [
+         "08:00:00"
+        ]
+       }
+      },
+      "site": {
+       "coding": [
+        {
+         "system": "http://snomed.info/sct",
+         "code": "39937001",
+         "display": "Skin structure"
+        }
+       ],
+       "text": "Skin structure"
+      },
+      "route": {
+       "coding": [
+        {
+         "system": "http://snomed.info/sct",
+         "code": "45890007",
+         "display": "Transdermal route"
+        }
+       ],
+       "text": "Transdermal route"
+      },
+      "doseAndRate": [
+       {
+        "type": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+           "code": "ordered",
+           "display": "Ordered"
+          }
+         ],
+         "text": "Ordered"
+        },
+        "doseQuantity": {
+         "value": 2,
+         "unit": "patch",
+         "system": "http://unitsofmeasure.org",
+         "code": "patch"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "ActivityDefinition/H2Q-MC-LZZT-IP-Administration",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-IP-Administration"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "ActivityDefinition",
+    "id": "H2Q-MC-LZZT-Placebo-TTS-test",
+    "meta": {
+     "versionId": "1",
+     "lastUpdated": "2022-09-07T09:10:36.744000+01:00",
+     "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+     ]
+    },
+    "identifier": [
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "system": "http://www.cdisc.org/ns/odm/v1.3#",
+         "display": "OID"
+        }
+       ]
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/FormDef#",
+      "value": "F.TTSTEST"
+     }
+    ],
+    "title": "TTS Placebo Application",
+    "status": "active",
+    "purpose": "Evaluate the TTS Patch for Acceptability",
+    "intent": "plan",
+    "productReference": {
+     "reference": "Medication/H2Q-MC-LZZT-LY246708-Placebo-TTS"
+    }
+   },
+   "request": {
+    "method": "PUT",
+    "url": "ActivityDefinition/H2Q-MC-LZZT-Placebo-TTS-test",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Placebo-TTS-test"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "H2Q-MC-LZZT-Study-Unscheduled-Visit",
+    "meta": {
+     "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+     ]
+    },
+    "identifier": [
+     {
+      "use": "usual",
+      "type": {
+       "coding": [
+        {
+         "code": "PLAC"
+        }
+       ]
+      },
+      "value": "UNSCHEDULED"
+     },
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "system": "http://www.cdisc.org/ns/odm/v1.3#",
+         "display": "OID"
+        }
+       ],
+       "text": "OID"
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.SCREENING_VISIT"
+     }
+    ],
+    "title": "Unscheduled Visit",
+    "status": "active",
+    "action": [
+     {
+      "id": "UNS-VISIT-H2Q-MC-LZZT-Visit-Date",
+      "title": "Record Visit Date",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+     },
+     {
+      "title": "Vital Signs: Temperature",
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
+     },
+     {
+      "title": "Vital Signs: Heart Rate and Blood Pressure",
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
+     },
+     {
+      "title": "12-lead ECG",
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Electrocardiogram"
+     },
+     {
+      "title": "Laboratory (Hematology)",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat"
+     },
+     {
+      "title": "Laboratory (Chemistry)",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem"
+     },
+     {
+      "title": "Laboratory (Urinalysis)",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis"
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "PlanDefinition/H2Q-MC-LZZT-Study-Unscheduled-Visit",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Study-Unscheduled-Visit"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "H2Q-MC-LZZT-Study-Visit-1",
+    "meta": {
+     "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": -14
+     }
+    ],
+    "identifier": [
+     {
+      "use": "usual",
+      "type": {
+       "coding": [
+        {
+         "code": "PLAC"
+        }
+       ]
+      },
+      "value": "VISIT-1"
+     },
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "system": "http://www.cdisc.org/ns/odm/v1.3#",
+         "display": "OID"
+        }
+       ],
+       "text": "OID"
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.SCREENING_VISIT"
+     }
+    ],
+    "status": "active",
+    "action": [
+     {
+      "id": "VISIT-1-H2Q-MC-LZZT-Visit-Date",
+      "title": "Record Visit Date",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+     },
+     {
+      "id": "H2Q-MC-LZZT-Informed-Consent",
+      "title": "Informed Consent",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-1-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Informed-Consent"
+     },
+     {
+      "title": "Patient number assigned",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Patient-number-assigned"
+     },
+     {
+      "title": "Hachinski 4",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Hachinski-4"
+     },
+     {
+      "title": "MMSE 10-23",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-MMSE-10-23"
+     },
+     {
+      "title": "Physical examination",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Physical-examination"
+     },
+     {
+      "title": "Medical History",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Medical-History"
+     },
+     {
+      "title": "Habits - Alcohol",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Habits-Alcohol"
+     },
+     {
+      "title": "Habits - Caffeine",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Habits-Caffeine"
+     },
+     {
+      "title": "Habits - Smoking",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Habits-Smoking"
+     },
+     {
+      "title": "Chest x-ray",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Chest-x-ray"
+     },
+     {
+      "title": "Vital signs: Height",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Height-PD"
+     },
+     {
+      "title": "Vital signs: Weight",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Weight-PD"
+     },
+     {
+      "title": "Vital Signs: Temperature",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
+     },
+     {
+      "title": "Vital Signs: Heart Rate and Blood Pressure",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
+     },
+     {
+      "title": "ECG",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ECG"
+     },
+     {
+      "title": "Placebo TTS test",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Placebo-TTS-test"
+     },
+     {
+      "title": "CT Scan",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-CT-Scan"
+     },
+     {
+      "title": "Concomitant Medications",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-1-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
+     },
+     {
+      "title": "Laboratory (Hematology)",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat"
+     },
+     {
+      "title": "Laboratory (Chemistry)",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem"
+     },
+     {
+      "title": "Laboratory (Urinalysis)",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis"
+     },
+     {
+      "title": "Hemoglobin A1C",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Hemoglobin-A1C"
+     },
+     {
+      "title": "ADAS-Cog",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"
+     },
+     {
+      "title": "Clinician's Interview-Based Impression of Change",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-CIBIC+"
+     },
+     {
+      "title": "Disability Assessment for Dementia",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-DAD"
+     },
+     {
+      "title": "Neuropsychiatric Inventory Questionnaire \u2013 Revised",
+      "relatedAction": [
+       {
+        "actionId": "H2Q-MC-LZZT-Informed-Consent",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+     },
+     {
+      "title": "Adverse events",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-1-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-1",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Study-Visit-1"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "H2Q-MC-LZZT-Study-Visit-2",
+    "meta": {
+     "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": 0
+     }
+    ],
+    "identifier": [
+     {
+      "use": "usual",
+      "type": {
+       "coding": [
+        {
+         "code": "PLAC"
+        }
+       ]
+      },
+      "value": "VISIT-2"
+     },
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "system": "http://www.cdisc.org/ns/odm/v1.3#",
+         "display": "OID"
+        }
+       ]
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.AMB_ECG_VISIT"
+     }
+    ],
+    "status": "active",
+    "action": [
+     {
+      "id": "VISIT-2-H2Q-MC-LZZT-Visit-Date",
+      "title": "Record Visit Date",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+     },
+     {
+      "title": "Vital signs: Weight",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-2-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Weight-PD"
+     },
+     {
+      "title": "Vital Signs: Temperature",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-2-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
+     },
+     {
+      "title": "Vital Signs: Heart Rate and Blood Pressure",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-2-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
+     },
+     {
+      "title": "Ambulatory ECG placed",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-2-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-placed"
+     },
+     {
+      "title": "Adverse events",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-2-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-2",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Study-Visit-2"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "H2Q-MC-LZZT-Study-Visit-3",
+    "meta": {
+     "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": 0
+     }
+    ],
+    "identifier": [
+     {
+      "use": "usual",
+      "type": {
+       "coding": [
+        {
+         "code": "PLAC"
+        }
+       ]
+      },
+      "value": "VISIT-3"
+     },
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "system": "http://www.cdisc.org/ns/odm/v1.3#",
+         "display": "OID"
+        }
+       ]
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.RANDOMIZATION_VISIT"
+     }
+    ],
+    "status": "active",
+    "action": [
+     {
+      "id": "VISIT-3-H2Q-MC-LZZT-Visit-Date",
+      "title": "Record Visit Date",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+     },
+     {
+      "title": "Vital signs: Weight",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-3-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Weight-PD"
+     },
+     {
+      "title": "Vital Signs: Temperature",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-3-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
+     },
+     {
+      "title": "Vital Signs: Heart Rate and Blood Pressure",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-3-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
+     },
+     {
+      "title": "Ambulatory ECG removed",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-3-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Ambulatory-ECG-removed"
+     },
+     {
+      "title": "Concomitant Medications",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-3-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
+     },
+     {
+      "id": "VISIT-3-H2Q-MC-LZZT-Patient-randomized",
+      "title": "Patient randomized",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Patient-randomized"
+     },
+     {
+      "id": "VISIT-3-H2Q-MC-LZZT-IP",
+      "title": "Study Drug Administration",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-3-H2Q-MC-LZZT-Patient-randomized",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-IP-Administration"
+     },
+     {
+      "title": "Plasma Specimen (Xanomeline)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-3-H2Q-MC-LZZT-Patient-randomized",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"
+     },
+     {
+      "title": "Study drug record: Medications Dispensed/Returned",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-3-H2Q-MC-LZZT-Patient-randomized",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"
+     },
+     {
+      "title": "ADAS-Cog",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-3-H2Q-MC-LZZT-Patient-randomized",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"
+     },
+     {
+      "title": "Clinician's Interview-Based Impression of Change",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-3-H2Q-MC-LZZT-Patient-randomized",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-CIBIC+"
+     },
+     {
+      "title": "Disability Assessment for Dementia",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-3-H2Q-MC-LZZT-Patient-randomized",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-DAD"
+     },
+     {
+      "title": "Neuropsychiatric Inventory Questionnaire \u2013 Revised",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-3-H2Q-MC-LZZT-Patient-randomized",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+     },
+     {
+      "title": "Adverse events",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-3-H2Q-MC-LZZT-Patient-randomized",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-3",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Study-Visit-3"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "H2Q-MC-LZZT-Study-Visit-4",
+    "meta": {
+     "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": 14
+     }
+    ],
+    "identifier": [
+     {
+      "use": "usual",
+      "type": {
+       "coding": [
+        {
+         "code": "PLAC"
+        }
+       ]
+      },
+      "value": "VISIT-4"
+     },
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "system": "http://www.cdisc.org/ns/odm/v1.3#",
+         "display": "OID"
+        }
+       ]
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.TRT_VISIT_01"
+     }
+    ],
+    "status": "active",
+    "action": [
+     {
+      "id": "VISIT-4-H2Q-MC-LZZT-Visit-Date",
+      "title": "Record Visit Date",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+     },
+     {
+      "title": "Apo-E genotyping",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-4-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Apo-E-genotyping"
+     },
+     {
+      "title": "Vital signs: Weight",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-4-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Weight-PD"
+     },
+     {
+      "title": "Vital Signs: Temperature",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-4-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
+     },
+     {
+      "title": "Vital Signs: Heart Rate and Blood Pressure",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-4-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
+     },
+     {
+      "title": "ECG",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-4-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ECG"
+     },
+     {
+      "title": "Concomitant Medications",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-4-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
+     },
+     {
+      "title": "Laboratory (Hematology)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-4-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat"
+     },
+     {
+      "title": "Laboratory (Chemistry)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-4-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem"
+     },
+     {
+      "title": "Laboratory (Urinalysis)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-4-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis"
+     },
+     {
+      "title": "Plasma Specimen (Xanomeline)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-4-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"
+     },
+     {
+      "title": "Study drug record: Medications Dispensed/Returned",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-4-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"
+     },
+     {
+      "title": "Neuropsychiatric Inventory Questionnaire \u2013 Revised",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-4-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+     },
+     {
+      "title": "Adverse events",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-4-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-4",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Study-Visit-4"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "H2Q-MC-LZZT-Study-Visit-5",
+    "meta": {
+     "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": 21
+     }
+    ],
+    "identifier": [
+     {
+      "use": "usual",
+      "type": {
+       "coding": [
+        {
+         "code": "PLAC"
+        }
+       ]
+      },
+      "value": "VISIT-5"
+     },
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "system": "http://www.cdisc.org/ns/odm/v1.3#",
+         "display": "OID"
+        }
+       ]
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.TRT_VISIT_02"
+     }
+    ],
+    "status": "active",
+    "action": [
+     {
+      "id": "VISIT-5-H2Q-MC-LZZT-Visit-Date",
+      "title": "Record Visit Date",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+     },
+     {
+      "title": "Vital signs: Weight",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-5-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Weight-PD"
+     },
+     {
+      "title": "Vital Signs: Temperature",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-5-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
+     },
+     {
+      "title": "Vital Signs: Heart Rate and Blood Pressure",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-5-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
+     },
+     {
+      "title": "ECG",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-5-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ECG"
+     },
+     {
+      "title": "Concomitant Medications",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-5-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
+     },
+     {
+      "title": "Laboratory (Hematology)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-5-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat"
+     },
+     {
+      "title": "Laboratory (Chemistry)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-5-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem"
+     },
+     {
+      "title": "Plasma Specimen (Xanomeline)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-5-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"
+     },
+     {
+      "title": "Study drug record: Medications Dispensed/Returned",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-5-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"
+     },
+     {
+      "title": "Neuropsychiatric Inventory Questionnaire \u2013 Revised",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-5-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+     },
+     {
+      "title": "Adverse events",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-5-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-5",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Study-Visit-5"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "H2Q-MC-LZZT-Study-Visit-6",
+    "meta": {
+     "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": 28
+     }
+    ],
+    "identifier": [
+     {
+      "value": "VISIT-6"
+     },
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "system": "http://www.cdisc.org/ns/odm/v1.3#",
+         "display": "OID"
+        }
+       ]
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.TRT_VISIT_03"
+     }
+    ],
+    "status": "active",
+    "action": [
+     {
+      "title": "Record Visit Date",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-6",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Study-Visit-6"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "H2Q-MC-LZZT-Study-Visit-7",
+    "meta": {
+     "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": 42
+     }
+    ],
+    "identifier": [
+     {
+      "value": "VISIT-7"
+     },
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "system": "http://www.cdisc.org/ns/odm/v1.3#",
+         "display": "OID"
+        }
+       ]
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.TRT_VISIT_04"
+     }
+    ],
+    "status": "active",
+    "action": [
+     {
+      "title": "Record Visit Date",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+     },
+     {
+      "title": "Vital signs/Temperature",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Vital-signs/Temperature"
+     },
+     {
+      "title": "ECG",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ECG"
+     },
+     {
+      "title": "Concomitant Medications",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
+     },
+     {
+      "title": "Laboratory (Chem/Hemat)",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-(Chem/Hemat)"
+     },
+     {
+      "title": "Plasma Specimen (Xanomeline)",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"
+     },
+     {
+      "title": "Study drug record: Medications Dispensed/Returned",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"
+     },
+     {
+      "title": "NPI-X",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+     },
+     {
+      "title": "Adverse events",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-7",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Study-Visit-7"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "H2Q-MC-LZZT-Study-Visit-8",
+    "meta": {
+     "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": 56
+     }
+    ],
+    "identifier": [
+     {
+      "value": "VISIT-8"
+     },
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "system": "http://www.cdisc.org/ns/odm/v1.3#",
+         "display": "OID"
+        }
+       ]
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.TRT_VISIT_05"
+     }
+    ],
+    "status": "active",
+    "action": [
+     {
+      "id": "VISIT-8-H2Q-MC-LZZT-Visit-Date",
+      "title": "Record Visit Date",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+     },
+     {
+      "title": "Vital signs: Weight",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-8-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Weight-PD"
+     },
+     {
+      "title": "Vital Signs: Temperature",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-8-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
+     },
+     {
+      "title": "Vital Signs: Heart Rate and Blood Pressure",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-8-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
+     },
+     {
+      "title": "ECG",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-8-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ECG"
+     },
+     {
+      "title": "Laboratory (Hematology)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-8-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat"
+     },
+     {
+      "title": "Laboratory (Chemistry)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-8-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem"
+     },
+     {
+      "title": "Study drug record: Medications Dispensed/Returned",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-8-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"
+     },
+     {
+      "title": "ADAS-Cog",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-8-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"
+     },
+     {
+      "title": "Clinician's Interview-Based Impression of Change",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-8-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-CIBIC+"
+     },
+     {
+      "title": "Disability Assessment for Dementia",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-8-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-DAD"
+     },
+     {
+      "title": "Concomitant Medications",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-8-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
+     },
+     {
+      "title": "Adverse events",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-8-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-8",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Study-Visit-8"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "H2Q-MC-LZZT-Study-Visit-8T",
+    "meta": {
+     "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": 70
+     }
+    ],
+    "identifier": [
+     {
+      "value": "VISIT-8T"
+     },
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "system": "http://www.cdisc.org/ns/odm/v1.3#",
+         "display": "OID"
+        }
+       ]
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.TRT_VISIT_05T"
+     }
+    ],
+    "status": "active",
+    "description": "Telephone Contact - Two Weeks Post Visit 8",
+    "action": [
+     {
+      "id": "VISIT-8T-H2Q-MC-LZZT-Visit-Date",
+      "title": "Record Visit Date",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+     },
+     {
+      "title": "Neuropsychiatric Inventory Questionnaire \u2013 Revised",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-8T-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-8T",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Study-Visit-8T"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "H2Q-MC-LZZT-Study-Visit-9",
+    "meta": {
+     "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": 84
+     }
+    ],
+    "identifier": [
+     {
+      "value": "VISIT-9"
+     },
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "system": "http://www.cdisc.org/ns/odm/v1.3#",
+         "display": "OID"
+        }
+       ]
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.TRT_VISIT_06"
+     }
+    ],
+    "type": {
+     "coding": [
+      {
+       "code": "clinical-protocol"
+      }
+     ]
+    },
+    "status": "retired",
+    "action": [
+     {
+      "id": "VISIT-9-H2Q-MC-LZZT-Visit-Date",
+      "title": "Record Visit Date",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+     },
+     {
+      "title": "Vital signs: Weight",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-9-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Weight-PD"
+     },
+     {
+      "title": "Vital Signs: Temperature",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-9-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
+     },
+     {
+      "title": "Vital Signs: Heart Rate and Blood Pressure",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-9-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
+     },
+     {
+      "title": "ECG",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-9-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ECG"
+     },
+     {
+      "title": "Laboratory (Hematology)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-9-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat"
+     },
+     {
+      "title": "Laboratory (Chemistry)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-9-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem"
+     },
+     {
+      "title": "Laboratory (Urinalysis)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-9-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis"
+     },
+     {
+      "title": "Plasma Specimen (Xanomeline)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-9-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"
+     },
+     {
+      "title": "Study drug record: Medications Dispensed/Returned",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-9-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"
+     },
+     {
+      "id": "VISIT-9-H2Q-MC-LZZT-NPI-X",
+      "title": "Neuropsychiatric Inventory Questionnaire \u2013 Revised",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-9-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+     },
+     {
+      "title": "Concomitant Medications",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-9-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
+     },
+     {
+      "title": "Adverse events",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-9-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-9",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Study-Visit-9"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "H2Q-MC-LZZT-Study-Visit-9T",
+    "meta": {
+     "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": 98
+     }
+    ],
+    "identifier": [
+     {
+      "value": "VISIT-9T"
+     },
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "system": "http://www.cdisc.org/ns/odm/v1.3#",
+         "display": "OID"
+        }
+       ]
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.TRT_VISIT_06T"
+     }
+    ],
+    "status": "active",
+    "description": "Telephone Contact - Two Weeks Post Visit 9",
+    "action": [
+     {
+      "id": "VISIT-9T-H2Q-MC-LZZT-Visit-Date",
+      "title": "Record Visit Date",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+     },
+     {
+      "title": "Neuropsychiatric Inventory Questionnaire \u2013 Revised",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-9T-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-9T",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Study-Visit-9T"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "H2Q-MC-LZZT-Study-Visit-10",
+    "meta": {
+     "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": 112
+     }
+    ],
+    "identifier": [
+     {
+      "value": "VISIT-10"
+     },
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "system": "http://www.cdisc.org/ns/odm/v1.3#",
+         "display": "OID"
+        }
+       ]
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.TRT_VISIT_07"
+     }
+    ],
+    "status": "active",
+    "action": [
+     {
+      "id": "VISIT-10-H2Q-MC-LZZT-Visit-Date",
+      "title": "Record Visit Date",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+     },
+     {
+      "title": "Vital signs: Weight",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-10-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Weight-PD"
+     },
+     {
+      "title": "Vital Signs: Temperature",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-10-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
+     },
+     {
+      "title": "Vital Signs: Heart Rate and Blood Pressure",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-10-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
+     },
+     {
+      "title": "ECG",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-10-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ECG"
+     },
+     {
+      "title": "Laboratory (Hematology)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-10-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat"
+     },
+     {
+      "title": "Laboratory (Chemistry)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-10-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem"
+     },
+     {
+      "title": "Study drug record: Medications Dispensed/Returned",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-10-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"
+     },
+     {
+      "title": "ADAS-Cog",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-10-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"
+     },
+     {
+      "title": "Clinician's Interview-Based Impression of Change",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-10-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-CIBIC+"
+     },
+     {
+      "title": "Disability Assessment for Dementia",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-10-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-DAD"
+     },
+     {
+      "title": "Concomitant Medications",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-10-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
+     },
+     {
+      "title": "Adverse events",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-10-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-10",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Study-Visit-10"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "H2Q-MC-LZZT-Study-Visit-10T",
+    "meta": {
+     "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": 126
+     }
+    ],
+    "identifier": [
+     {
+      "value": "VISIT-10T"
+     },
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "system": "http://www.cdisc.org/ns/odm/v1.3#",
+         "display": "OID"
+        }
+       ]
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.TRT_VISIT_07T"
+     }
+    ],
+    "status": "active",
+    "description": "Telephone Contact - Two Weeks Post Visit 10",
+    "action": [
+     {
+      "id": "VISIT-10T-H2Q-MC-LZZT-Visit-Date",
+      "title": "Record Visit Date",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+     },
+     {
+      "title": "Neuropsychiatric Inventory Questionnaire \u2013 Revised",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-10T-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-10T",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Study-Visit-10T"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "H2Q-MC-LZZT-Study-Visit-11",
+    "meta": {
+     "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": 140
+     }
+    ],
+    "identifier": [
+     {
+      "value": "VISIT-11"
+     },
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "system": "http://www.cdisc.org/ns/odm/v1.3#",
+         "display": "OID"
+        }
+       ]
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.TRT_VISIT_08"
+     }
+    ],
+    "status": "active",
+    "action": [
+     {
+      "id": "VISIT-11-H2Q-MC-LZZT-Visit-Date",
+      "title": "Record Visit Date",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+     },
+     {
+      "title": "Vital signs: Weight",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-11-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Weight-PD"
+     },
+     {
+      "title": "Vital Signs: Temperature",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-11-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
+     },
+     {
+      "title": "Vital Signs: Heart Rate and Blood Pressure",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-11-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
+     },
+     {
+      "title": "ECG",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-11-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ECG"
+     },
+     {
+      "title": "Laboratory (Hematology)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-11-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat"
+     },
+     {
+      "title": "Laboratory (Chemistry)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-11-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem"
+     },
+     {
+      "title": "Plasma Specimen (Xanomeline)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-11-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"
+     },
+     {
+      "title": "Study drug record: Medications Dispensed/Returned",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-11-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"
+     },
+     {
+      "title": "Concomitant Medications",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-11-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
+     },
+     {
+      "title": "Adverse events",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-11-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-11",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Study-Visit-11"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "H2Q-MC-LZZT-Study-Visit-11T",
+    "meta": {
+     "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": 154
+     }
+    ],
+    "identifier": [
+     {
+      "value": "VISIT-11T"
+     },
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "system": "http://www.cdisc.org/ns/odm/v1.3#",
+         "display": "OID"
+        }
+       ]
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.TRT_VISIT_08T"
+     }
+    ],
+    "status": "active",
+    "description": "Telephone Contact - Two Weeks Post Visit 11",
+    "action": [
+     {
+      "id": "VISIT-11T-H2Q-MC-LZZT-Visit-Date",
+      "title": "Record Visit Date",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+     },
+     {
+      "title": "Neuropsychiatric Inventory Questionnaire \u2013 Revised",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-10T-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-11T",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Study-Visit-11T"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "H2Q-MC-LZZT-Study-Visit-12",
+    "meta": {
+     "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": 168
+     }
+    ],
+    "identifier": [
+     {
+      "value": "VISIT-12"
+     },
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "system": "http://www.cdisc.org/ns/odm/v1.3#",
+         "display": "OID"
+        }
+       ]
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.TRT_VISIT_09"
+     }
+    ],
+    "status": "active",
+    "action": [
+     {
+      "id": "VISIT-12-H2Q-MC-LZZT-Visit-Date",
+      "title": "Record Visit Date",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+     },
+     {
+      "title": "Vital signs: Weight",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-12-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Weight-PD"
+     },
+     {
+      "title": "Vital Signs: Temperature",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-12-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
+     },
+     {
+      "title": "Vital Signs: Heart Rate and Blood Pressure",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-12-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
+     },
+     {
+      "title": "ECG",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-12-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ECG"
+     },
+     {
+      "title": "Laboratory (Hematology)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-12-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat"
+     },
+     {
+      "title": "Laboratory (Chemistry)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-12-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem"
+     },
+     {
+      "title": "Laboratory (Urinalysis)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-12-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis"
+     },
+     {
+      "title": "Study drug record: Medications Dispensed/Returned",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-11-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"
+     },
+     {
+      "title": "ADAS-Cog",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-11-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"
+     },
+     {
+      "title": "Clinician's Interview-Based Impression of Change",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-11-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-CIBIC+"
+     },
+     {
+      "title": "Disability Assessment for Dementia",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-11-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-DAD"
+     },
+     {
+      "title": "Neuropsychiatric Inventory Questionnaire \u2013 Revised",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-11-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+     },
+     {
+      "title": "Concomitant Medications",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-12-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
+     },
+     {
+      "title": "Adverse events",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-12-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-12",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Study-Visit-12"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "H2Q-MC-LZZT-Study-Visit-13",
+    "meta": {
+     "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": 182
+     }
+    ],
+    "identifier": [
+     {
+      "use": "usual",
+      "type": {
+       "coding": [
+        {
+         "code": "PLAC"
+        }
+       ]
+      },
+      "value": "VISIT-13"
+     },
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "system": "http://www.cdisc.org/ns/odm/v1.3#",
+         "display": "OID"
+        }
+       ]
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.TRT_VISIT_10"
+     }
+    ],
+    "status": "active",
+    "action": [
+     {
+      "id": "VISIT-13-H2Q-MC-LZZT-Visit-Date",
+      "title": "Record Visit Date",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+     },
+     {
+      "title": "Physical examination",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-13-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Physical-examination"
+     },
+     {
+      "title": "Vital signs: Weight",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-13-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Weight-PD"
+     },
+     {
+      "title": "Vital Signs: Temperature",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-13-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
+     },
+     {
+      "title": "Vital Signs: Heart Rate and Blood Pressure",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-13-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
+     },
+     {
+      "title": "ECG",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-13-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ECG"
+     },
+     {
+      "title": "Laboratory (Hematology)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-13-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat"
+     },
+     {
+      "title": "Laboratory (Chemistry)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-13-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem"
+     },
+     {
+      "title": "Study drug record: Medications Dispensed/Returned",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-13-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record"
+     },
+     {
+      "title": "TTS Acceptability Survey",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-13-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey"
+     },
+     {
+      "title": "Neuropsychiatric Inventory Questionnaire \u2013 Revised",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-11-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+     },
+     {
+      "title": "Concomitant Medications",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-13-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
+     },
+     {
+      "title": "Adverse events",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-13-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-13",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Study-Visit-13"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "H2Q-MC-LZZT-Study-ET-14",
+    "meta": {
+     "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": 0
+     }
+    ],
+    "identifier": [
+     {
+      "use": "usual",
+      "type": {
+       "coding": [
+        {
+         "code": "PLAC"
+        }
+       ]
+      },
+      "value": "ET"
+     },
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "system": "http://www.cdisc.org/ns/odm/v1.3#",
+         "display": "OID"
+        }
+       ]
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.EARLY_TERM_VISIT"
+     }
+    ],
+    "status": "active",
+    "action": [
+     {
+      "id": "VISIT-14-H2Q-MC-LZZT-Visit-Date",
+      "title": "Record Visit Date",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+     },
+     {
+      "title": "Early Termination",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-14-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ET"
+     },
+     {
+      "title": "Physical examination",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-14-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Physical-examination"
+     },
+     {
+      "title": "Vital signs: Weight",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-14-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Weight-PD"
+     },
+     {
+      "title": "Vital Signs: Temperature",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-14-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
+     },
+     {
+      "title": "Vital Signs: Heart Rate and Blood Pressure",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-14-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
+     },
+     {
+      "title": "ECG",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-14-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ECG"
+     },
+     {
+      "title": "Concomitant Medications",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-14-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
+     },
+     {
+      "title": "Laboratory (Hematology)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-14-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Hemat"
+     },
+     {
+      "title": "Laboratory (Chemistry)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-14-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Chem"
+     },
+     {
+      "title": "Laboratory (Urinalysis)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-14-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Laboratory-Urinalysis"
+     },
+     {
+      "title": "Plasma Specimen (Xanomeline)",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-14-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Plasma-Specimen"
+     },
+     {
+      "title": "Study drug record: Medications Dispensed/Returned",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-14-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Study-drug-record-ET"
+     },
+     {
+      "title": "TTS Acceptability Survey",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-14-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-TTS-Acceptability-Survey"
+     },
+     {
+      "title": "ADAS-Cog",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-14-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"
+     },
+     {
+      "title": "Clinician's Interview-Based Impression of Change",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-14-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-CIBIC+"
+     },
+     {
+      "title": "Disability Assessment for Dementia",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-14-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-DAD"
+     },
+     {
+      "title": "Neuropsychiatric Inventory Questionnaire \u2013 Revised",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-14-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+     },
+     {
+      "title": "Adverse events",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-14-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "PlanDefinition/H2Q-MC-LZZT-Study-ET-14",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Study-ET-14"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "H2Q-MC-LZZT-Study-RT-15",
+    "meta": {
+     "profile": [
+      "http://example.org/br-and-r/soa/StructureDefinition/SOA-PlanDefinition"
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://example.org/br-and-r/soa/StructureDefinition/planned-visit-study-day",
+      "valueInteger": 0
+     }
+    ],
+    "identifier": [
+     {
+      "use": "usual",
+      "type": {
+       "coding": [
+        {
+         "code": "PLAC"
+        }
+       ]
+      },
+      "value": "RT"
+     },
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "system": "http://www.cdisc.org/ns/odm/v1.3#",
+         "display": "OID"
+        }
+       ]
+      },
+      "system": "http://www.cdisc.org/ns/odm/v1.3/StudyDef#",
+      "value": "SE.RETRIEVAL_TERM_VISIT"
+     }
+    ],
+    "status": "active",
+    "action": [
+     {
+      "id": "VISIT-15-H2Q-MC-LZZT-Visit-Date",
+      "title": "Record Visit Date",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Visit-Date"
+     },
+     {
+      "title": "RT",
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-RT"
+     },
+     {
+      "title": "Vital signs: Weight",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-15-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Weight-PD"
+     },
+     {
+      "title": "Vital Signs: Temperature",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-15-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-Temperature-PD"
+     },
+     {
+      "title": "Vital Signs: Heart Rate and Blood Pressure",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-15-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Vital-Signs-HeartRate-BloodPressure"
+     },
+     {
+      "title": "Concomitant Medications",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-15-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Concomitant-Medications"
+     },
+     {
+      "title": "ADAS-Cog",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-15-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-ADAS-Cog"
+     },
+     {
+      "title": "Clinician's Interview-Based Impression of Change",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-15-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-CIBIC+"
+     },
+     {
+      "title": "Disability Assessment for Dementia",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-15-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-DAD"
+     },
+     {
+      "title": "Neuropsychiatric Inventory Questionnaire \u2013 Revised",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-15-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-NPI-X"
+     },
+     {
+      "title": "Adverse events",
+      "relatedAction": [
+       {
+        "actionId": "VISIT-15-H2Q-MC-LZZT-Visit-Date",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "ActivityDefinition/H2Q-MC-LZZT-Adverse-events"
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "PlanDefinition/H2Q-MC-LZZT-Study-RT-15",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-Study-RT-15"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Group",
+    "id": "H2Q-MC-LZZT-ResearchStudy-Inclusion",
+    "type": "person",
+    "actual": false,
+    "characteristic": [
+     {
+      "code": {
+       "text": "Males and postmenopausal females at least 50 years of age."
+      },
+      "valueBoolean": true,
+      "exclude": false
+     },
+     {
+      "code": {
+       "text": "Diagnosis of probable AD as defined by National Institute of Neurological and Communicative Disorders and Stroke (NINCDS) and the Alzheimer\u2019s Disease and Related Disorders Association (ADRDA) guidelines"
+      },
+      "valueBoolean": true,
+      "exclude": false
+     },
+     {
+      "code": {
+       "text": "MMSE score of 10 to 23."
+      },
+      "valueBoolean": true,
+      "exclude": false
+     },
+     {
+      "code": {
+       "text": "Hachinski Ischemic Scale score of \u22644"
+      },
+      "valueBoolean": true,
+      "exclude": false
+     },
+     {
+      "code": {
+       "text": "CNS imaging (CT scan or MRI of brain) compatible with AD within past 1 year."
+      },
+      "valueBoolean": true,
+      "exclude": false
+     },
+     {
+      "code": {
+       "text": "Investigator has obtained informed consent signed by the patient (and/or legal representative) and by the caregiver."
+      },
+      "valueBoolean": true,
+      "exclude": false
+     },
+     {
+      "code": {
+       "text": "Geographic proximity to investigator\u2019s site that allows adequate follow-up."
+      },
+      "valueBoolean": true,
+      "exclude": false
+     },
+     {
+      "code": {
+       "text": "A reliable caregiver who is in frequent or daily contact with the patient and who will accompany the patient to the office and/or be available by telephone at designated times, will monitor administration of prescribed medications, and will be responsible for the overall care of the patient at home. The caregiver and the patient must be able to communicate in English and willing to comply with 26 weeks of transdermal therapy."
+      },
+      "valueBoolean": true,
+      "exclude": false
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "Group/H2Q-MC-LZZT-ResearchStudy-Inclusion",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-ResearchStudy-Inclusion"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Group",
+    "id": "H2Q-MC-LZZT-ResearchStudy-Exclusion",
+    "type": "person",
+    "actual": false,
+    "characteristic": [
+     {
+      "code": {
+       "text": "Persons who have previously completed or withdrawn from this study or any other study investigating xanomeline TTS or the oral formulation of xanomeline."
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "Use of any investigational agent or approved Alzheimer\u2019s therapeutic medication within 30 days prior to enrollment into the study."
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "Serious illness which required hospitalization within 3 months of screening."
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "Stroke or vascular dementia documented by clinical history and/or radiographic findings interpretable by the investigator as indicative of these disorders"
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "Seizure disorder other than simple childhood febrile seizures"
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "Severe head trauma resulting in protracted loss of consciousness within the last 5 years, or multiple episodes of head trauma"
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "Parkinson\u2019s disease"
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "Multiple sclerosis"
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "Amyotrophic lateral sclerosis"
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "Myasthenia gravis"
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "Episode of depression meeting DSM-IV criteria within 3 months of screening."
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "A history within the last 5 years of Schizophrenia."
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "A history within the last 5 years of Bipolar Disease."
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "A history within the last 5 years of Ethanol or psychoactive drug abuse or dependence."
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "A history of syncope within the last 5 years."
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "Evidence from ECG recording of Left bundle branch block."
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "Evidence from ECG recording of Bradycardia \u226450 beats per minute"
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "Evidence from ECG recording of Sinus pauses >2 seconds"
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "Evidence from ECG recording of Second or third degree heart block unless treated with a pacemaker"
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "Evidence from ECG recording of Wolff-Parkinson-White syndrome"
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "Evidence from ECG recording of Sustained supraventricular tachyarrhythmia including SVT\u226510 sec, atrial fibrillation, atrial flutter."
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "Evidence from ECG recording of Ventricular tachycardia at a rate of \u2265120 beats per minute lasting \u226510 seconds."
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "A history within the last 5 years of Clinically significant arrhythmia"
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "A history within the last 5 years of Symptomatic sick sinus syndrome not treated with a pacemaker"
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "A history within the last 5 years of Congestive heart failure refractory to treatment"
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "A history within the last 5 years of Angina except angina controlled with PRN nitroglycerin"
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "A history within the last 5 years of Resting heart rate <50 or >100 beats per minute, on physical exam"
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "A history within the last 5 years of Uncontrolled hypertension."
+      },
+      "valueBoolean": true,
+      "exclude": true
+     },
+     {
+      "code": {
+       "text": "A history within the last 5 years of a serious gastrointestinal disorder"
+      },
+      "valueBoolean": true,
+      "exclude": true
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "Group/H2Q-MC-LZZT-ResearchStudy-Exclusion",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-ResearchStudy-Exclusion"
+   }
+  },
+  {
+   "fullUrl": "PlanDefinition/H2Q-MC-LZZT-ProtocolDesign",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "H2Q-MC-LZZT-ProtocolDesign",
+    "identifier": [
+     {
+      "use": "usual",
+      "type": {
+       "coding": [
+        {
+         "code": "PLAC"
+        }
+       ]
+      },
+      "value": "H2Q-MC-LZZT-ProtocolDesign"
+     }
+    ],
+    "version": "LZZT_1",
+    "status": "active",
+    "action": [
+     {
+      "title": "Visit-1",
+      "description": "Planned Visit [Visit-1]",
+      "relatedAction": [
+       {
+        "actionId": "Index-Activity-Event",
+        "relationship": "before",
+        "offsetRange": {
+         "low": {
+          "value": 12,
+          "code": "d"
+         },
+         "high": {
+          "value": 15,
+          "code": "d"
+         }
+        }
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-1"
+     },
+     {
+      "id": "H2Q-MC-LZZT-Study-Visit-2",
+      "title": "Visit-2",
+      "description": "Planned Visit [Visit-2]",
+      "relatedAction": [
+       {
+        "actionId": "Index-Activity-Event",
+        "relationship": "before",
+        "offsetRange": {
+         "low": {
+          "value": 1,
+          "code": "d"
+         }
+        }
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-2"
+     },
+     {
+      "id": "Index-Activity-Event",
+      "title": "Visit-3",
+      "description": "Planned Visit [Visit-3]",
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-3"
+     },
+     {
+      "title": "Visit-4",
+      "description": "Planned Visit [Visit-4]",
+      "relatedAction": [
+       {
+        "actionId": "Index-Activity-Event",
+        "relationship": "after",
+        "offsetRange": {
+         "low": {
+          "value": 12,
+          "code": "d"
+         },
+         "high": {
+          "value": 15,
+          "code": "d"
+         }
+        }
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-4"
+     },
+     {
+      "title": "Visit-5",
+      "description": "Planned Visit [Visit-5]",
+      "relatedAction": [
+       {
+        "actionId": "Index-Activity-Event",
+        "relationship": "after",
+        "offsetRange": {
+         "low": {
+          "value": 26,
+          "code": "d"
+         },
+         "high": {
+          "value": 30,
+          "code": "d"
+         }
+        }
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-5"
+     },
+     {
+      "title": "Visit-6",
+      "description": "Planned Visit [Visit-6]",
+      "relatedAction": [
+       {
+        "actionId": "Index-Activity-Event",
+        "relationship": "after",
+        "offsetRange": {
+         "low": {
+          "value": 33,
+          "code": "d"
+         },
+         "high": {
+          "value": 37,
+          "code": "d"
+         }
+        }
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-6"
+     },
+     {
+      "title": "Visit-7",
+      "description": "Planned Visit [Visit-7]",
+      "relatedAction": [
+       {
+        "actionId": "Index-Activity-Event",
+        "relationship": "after",
+        "offsetRange": {
+         "low": {
+          "value": 40,
+          "code": "d"
+         },
+         "high": {
+          "value": 44,
+          "code": "d"
+         }
+        }
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-7"
+     },
+     {
+      "title": "Visit-8",
+      "description": "Planned Visit [Visit-8]",
+      "relatedAction": [
+       {
+        "actionId": "Index-Activity-Event",
+        "relationship": "after",
+        "offsetRange": {
+         "low": {
+          "value": 54,
+          "code": "d"
+         },
+         "high": {
+          "value": 58,
+          "code": "d"
+         }
+        }
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-8"
+     },
+     {
+      "title": "Visit-9",
+      "description": "Planned Visit [Visit-9]",
+      "relatedAction": [
+       {
+        "actionId": "Index-Activity-Event",
+        "relationship": "after",
+        "offsetRange": {
+         "low": {
+          "value": 82,
+          "code": "d"
+         },
+         "high": {
+          "value": 86,
+          "code": "d"
+         }
+        }
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-9"
+     },
+     {
+      "title": "Visit-10",
+      "description": "Planned Visit [Visit-10]",
+      "relatedAction": [
+       {
+        "actionId": "Index-Activity-Event",
+        "relationship": "after",
+        "offsetRange": {
+         "low": {
+          "value": 110,
+          "code": "d"
+         },
+         "high": {
+          "value": 112,
+          "code": "d"
+         }
+        }
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-10"
+     },
+     {
+      "title": "Visit-11",
+      "description": "Planned Visit [Visit-11]",
+      "relatedAction": [
+       {
+        "actionId": "Index-Activity-Event",
+        "relationship": "after",
+        "offsetRange": {
+         "low": {
+          "value": 138,
+          "code": "d"
+         },
+         "high": {
+          "value": 142,
+          "code": "d"
+         }
+        }
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-11"
+     },
+     {
+      "title": "Visit-12",
+      "description": "Planned Visit [Visit-12]",
+      "relatedAction": [
+       {
+        "actionId": "Index-Activity-Event",
+        "relationship": "after",
+        "offsetRange": {
+         "low": {
+          "value": 166,
+          "code": "d"
+         },
+         "high": {
+          "value": 170,
+          "code": "d"
+         }
+        }
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-12"
+     },
+     {
+      "title": "Visit-13",
+      "description": "Planned Visit [Visit-13]",
+      "relatedAction": [
+       {
+        "actionId": "Index-Activity-Event",
+        "relationship": "after",
+        "offsetRange": {
+         "low": {
+          "value": 180,
+          "code": "d"
+         },
+         "high": {
+          "value": 184,
+          "code": "d"
+         }
+        }
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Study-Visit-13"
+     },
+     {
+      "title": "ET-14",
+      "description": "Planned Visit [ET-14]",
+      "relatedAction": [
+       {
+        "actionId": "Index-Activity-Event",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Study-ET-14"
+     },
+     {
+      "title": "RT-15",
+      "description": "Planned Visit [RT-15]",
+      "relatedAction": [
+       {
+        "actionId": "Index-Activity-Event",
+        "relationship": "after"
+       }
+      ],
+      "definitionUri": "PlanDefinition/H2Q-MC-LZZT-Study-RT-15"
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "PlanDefinition/H2Q-MC-LZZT-ProtocolDesign",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-ProtocolDesign"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "ResearchStudy",
+    "id": "H2Q-MC-LZZT-ResearchStudy",
+    "identifier": [
+     {
+      "use": "usual",
+      "value": "H2Q-MC-LZZT"
+     },
+     {
+      "use": "official",
+      "system": "https://clinicaltrials.gov/show/",
+      "value": "NCTA12313212"
+     },
+     {
+      "use": "secondary",
+      "type": {
+       "coding": [
+        {
+         "code": "PLAC"
+        }
+       ]
+      },
+      "value": "NCTA12313212"
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "code": "PUBCHEM"
+        }
+       ]
+      },
+      "value": "60809"
+     }
+    ],
+    "title": "Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer\u2019s Disease",
+    "protocol": [
+     {
+      "reference": "PlanDefinition/H2Q-MC-LZZT-ProtocolDesign"
+     }
+    ],
+    "status": "completed",
+    "primaryPurposeType": {
+     "coding": [
+      {
+       "code": "treatment"
+      }
+     ]
+    },
+    "phase": {
+     "coding": [
+      {
+       "code": "phase-3"
+      }
+     ]
+    },
+    "category": [
+     {
+      "coding": [
+       {
+        "system": "http://ncimeta.nci.nih.gov",
+        "code": "C98388",
+        "display": "Interventional Study"
+       }
+      ]
+     },
+     {
+      "coding": [
+       {
+        "system": "http://ncimeta.nci.nih.gov",
+        "code": "C15417",
+        "display": "Randomized Clinical Trial"
+       }
+      ]
+     },
+     {
+      "coding": [
+       {
+        "system": "http://ncimeta.nci.nih.gov",
+        "code": "C15228",
+        "display": "Double Blind Study"
+       }
+      ]
+     },
+     {
+      "coding": [
+       {
+        "system": "http://ncimeta.nci.nih.gov",
+        "code": "C49648",
+        "display": "Placebo Control"
+       }
+      ]
+     },
+     {
+      "coding": [
+       {
+        "system": "http://ncimeta.nci.nih.gov",
+        "code": "C82639",
+        "display": "Parallel Study"
+       }
+      ]
+     }
+    ],
+    "focus": [
+     {
+      "coding": [
+       {
+        "system": "http://ncimeta.nci.nih.gov",
+        "code": "C152926",
+        "display": "Xanomeline"
+       }
+      ]
+     },
+     {
+      "coding": [
+       {
+        "system": "http://ncimeta.nci.nih.gov",
+        "code": "C149996",
+        "display": "Transdermal Patch Dosage Form"
+       }
+      ]
+     },
+     {
+      "coding": [
+       {
+        "system": "https://pubmed.ncbi.nlm.nih.gov",
+        "code": "9109749",
+        "display": "Effects of xanomeline, a selective muscarinic receptor agonist, on cognitive function and behavioral symptoms in Alzheimer disease"
+       }
+      ]
+     }
+    ],
+    "condition": [
+     {
+      "coding": [
+       {
+        "code": "26929004",
+        "display": "Alzheimer's Disease (Disorder)"
+       }
+      ]
+     }
+    ],
+    "contact": [
+     {
+      "name": "Bob James, Ph.D.",
+      "telecom": [
+       {
+        "system": "phone",
+        "value": "555-555-5555",
+        "use": "work"
+       }
+      ]
+     }
+    ],
+    "relatedArtifact": [
+     {
+      "type": "documentation",
+      "label": "Arch Neurol.1997;54(4):465-473",
+      "display": "Arch Neurol.1997;54(4):465-473",
+      "citation": "Bodick NC, Offen WW, Levey AI, et al. Effects of xanomeline, a selective muscarinic receptor agonist, on cognitive function and behavioral symptoms in Alzheimer disease. Arch Neurol. 1997;54(4):465-473. doi:10.1001/archneur.1997.00550160091022"
+     },
+     {
+      "type": "documentation",
+      "label": "Protocol H2Q-MC-LZZT(c)",
+      "url": "https://clinicaltrials.gov/show/NCTA12313212/Lzzt_protocol_redacted.pdf"
+     }
+    ],
+    "keyword": [
+     {
+      "coding": [
+       {
+        "system": "https://id.nlm.nih.gov/mesh",
+        "code": "D018721"
+       }
+      ],
+      "text": "Selective M1 muscarinic agonists"
+     },
+     {
+      "coding": [
+       {
+        "system": "https://id.nlm.nih.gov/mesh",
+        "code": "D000544"
+       }
+      ],
+      "text": "Alzheimer Disease"
+     },
+     {
+      "coding": [
+       {
+        "system": "https://id.nlm.nih.gov/mesh",
+        "code": "D018721"
+       }
+      ],
+      "text": "Selective M1 muscarinic agonists"
+     }
+    ],
+    "description": "## Xanomeline (LY246708) ### Protocol H2Q-MC-LZZT(c) Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer\u2019s Disease",
+    "enrollment": [
+     {
+      "reference": "Group/H2Q-MC-LZZT-ResearchStudy-Inclusion"
+     },
+     {
+      "reference": "Group/H2Q-MC-LZZT-ResearchStudy-Exclusion"
+     }
+    ],
+    "sponsor": {
+     "reference": "Organization/EliLillyAndCompany"
+    },
+    "principalInvestigator": {
+     "reference": "Practitioner/SamGetWell"
+    },
+    "reasonStopped": {
+     "coding": [
+      {
+       "code": "accrual-goal-met"
+      }
+     ]
+    },
+    "arm": [
+     {
+      "name": "Placebo",
+      "type": {
+       "coding": [
+        {
+         "system": "http://ncimeta.nci.nih.gov",
+         "code": "C49648"
+        }
+       ]
+      },
+      "description": "Placebo arm"
+     },
+     {
+      "name": "Low-dose xanomeline arm",
+      "type": {
+       "coding": [
+        {
+         "system": "http://ncimeta.nci.nih.gov",
+         "code": "C174266"
+        }
+       ]
+      },
+      "description": "Low-dose xanomeline arm (50 cm2 TTS Formulation E, 54 mg xanomeline)"
+     },
+     {
+      "name": "High-dose xanomeline arm",
+      "type": {
+       "coding": [
+        {
+         "system": "http://ncimeta.nci.nih.gov",
+         "code": "C174266"
+        }
+       ]
+      },
+      "description": "High-dose xanomeline arm (75 cm2 TTS Formulation E, 81 mg xanomeline)"
+     }
+    ],
+    "objective": [
+     {
+      "name": "To determine if there is a statistically significant relationship (overall Type 1 error rate, \u03b1=.05) between the change in both ADAS-Cog and CIBIC+ scores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg]).",
+      "type": {
+       "coding": [
+        {
+         "code": "primary"
+        }
+       ]
+      }
+     },
+     {
+      "name": "To document the safety profile of the xanomeline TTS.",
+      "type": {
+       "coding": [
+        {
+         "code": "primary"
+        }
+       ]
+      }
+     },
+     {
+      "name": "To assess the dose-dependent improvement in behavior. Improved scores on the Revised Neuropsychiatric Inventory (NPI-X) will indicate improvement in these areas.",
+      "type": {
+       "coding": [
+        {
+         "code": "secondary"
+        }
+       ]
+      }
+     },
+     {
+      "name": "To assess the dose-dependent improvements in activities of daily living. Improved scores on the Disability Assessment for Dementia (DAD) will indicate improvement in these areas.",
+      "type": {
+       "coding": [
+        {
+         "code": "secondary"
+        }
+       ]
+      }
+     },
+     {
+      "name": "To assess the dose-dependent improvements in an extended assessment of cognition that integrates attention/concentration tasks. The Alzheimer\u2019s Disease Assessment Scale-14 item Cognitive Subscale, hereafter referred to as ADAS-Cog (14), will be used for this assessment.",
+      "type": {
+       "coding": [
+        {
+         "code": "secondary"
+        }
+       ]
+      }
+     },
+     {
+      "name": "To assess the treatment response as a function of Apo E genotype.",
+      "type": {
+       "coding": [
+        {
+         "code": "secondary"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "ResearchStudy/H2Q-MC-LZZT-ResearchStudy",
+    "ifNoneExist": "identifier=H2Q-MC-LZZT-ResearchStudy"
+   }
+  },
+  {
+   "fullUrl": "Practitioner/93d0c617-873c-4b01-b03e-d6870a81bb10",
+   "resource": {
+    "resourceType": "Practitioner",
+    "id": "93d0c617-873c-4b01-b03e-d6870a81bb10",
+    "identifier": [
+     {
+      "use": "official",
+      "type": {
+       "coding": [
+        {
+         "code": "UPIN"
+        }
+       ]
+      },
+      "value": "ABC1234"
+     }
+    ],
+    "active": true,
+    "name": [
+     {
+      "use": "usual",
+      "family": "Home",
+      "given": [
+       "Samuel"
+      ],
+      "prefix": [
+       "Dr"
+      ],
+      "suffix": [
+       "M.D."
+      ]
+     }
+    ],
+    "telecom": [
+     {
+      "system": "phone",
+      "value": "555-123-5467",
+      "use": "work"
+     }
+    ],
+    "gender": "male"
+   },
+   "request": {
+    "method": "PUT",
+    "url": "Practitioner/93d0c617-873c-4b01-b03e-d6870a81bb10",
+    "ifNoneExist": "identifier=93d0c617-873c-4b01-b03e-d6870a81bb10"
+   }
+  },
+  {
+   "fullUrl": "Organization/93d0c617-873c-4b01-b03e-d6870a81bb10",
+   "resource": {
+    "resourceType": "Organization",
+    "id": "7648d1c2-da4b-4ff5-9e3c-b13c4ddce698",
+    "identifier": [
+     {
+      "use": "official",
+      "value": "Eli Lilly and Company Inc"
+     }
+    ],
+    "type": [
+     {
+      "coding": [
+       {
+        "code": "crs"
+       }
+      ]
+     }
+    ],
+    "contact": [
+     {
+      "purpose": {
+       "coding": [
+        {
+         "code": "ADMIN"
+        }
+       ]
+      },
+      "telecom": [
+       {
+        "system": "url",
+        "value": "https://www.lilly.com"
+       }
+      ]
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "Organization/7648d1c2-da4b-4ff5-9e3c-b13c4ddce698",
+    "ifNoneExist": "identifier=7648d1c2-da4b-4ff5-9e3c-b13c4ddce698"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Organization",
+    "id": "b4a528955b84f584974e92d025a75d1f",
+    "name": "H2Q-MC-LZZT Site 701"
+   },
+   "request": {
+    "method": "PUT",
+    "url": "Organization/b4a528955b84f584974e92d025a75d1f",
+    "ifNoneExist": "id=b4a528955b84f584974e92d025a75d1f"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Medication",
+    "id": "H2Q-MC-LZZT-LY246708"
+   },
+   "request": {
+    "method": "PUT",
+    "url": "Medication/H2Q-MC-LZZT-LY246708",
+    "ifNoneExist": "id=H2Q-MC-LZZT-LY246708"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "CarePlan",
+    "id": "cba5e54edcf7a8ad05b4500365b4c06f",
+    "identifier": [
+     {
+      "value": "d627c29b5e5bc6b2a94fe4ff4c67830a-1.0-CarePlan"
+     }
+    ],
+    "instantiatesCanonical": [
+     "PlanDefinition/H2Q-MC-LZZT-Study-Visit-1"
+    ],
+    "status": "completed",
+    "intent": "order",
+    "title": "Subject 01-701-1057 1.0",
+    "subject": {
+     "reference": "Patient/d627c29b5e5bc6b2a94fe4ff4c67830a"
+    }
+   },
+   "request": {
+    "method": "PUT",
+    "url": "CarePlan/cba5e54edcf7a8ad05b4500365b4c06f",
+    "ifNoneExist": "identifier=cba5e54edcf7a8ad05b4500365b4c06f"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "ServiceRequest",
+    "id": "4b17ead5ed97ee9ce7885bb2c15f72ce",
+    "identifier": [
+     {
+      "value": "d627c29b5e5bc6b2a94fe4ff4c67830a-1.0-ServiceRequest"
+     }
+    ],
+    "basedOn": [
+     {
+      "reference": "CarePlan/cba5e54edcf7a8ad05b4500365b4c06f"
+     }
+    ],
+    "status": "completed",
+    "intent": "order",
+    "subject": {
+     "reference": "Patient/d627c29b5e5bc6b2a94fe4ff4c67830a"
+    }
+   },
+   "request": {
+    "method": "PUT",
+    "url": "ServiceRequest/4b17ead5ed97ee9ce7885bb2c15f72ce",
+    "ifNoneExist": "identifier=4b17ead5ed97ee9ce7885bb2c15f72ce"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "35524ba432febb8f5ab076d0aacb2ac2",
+    "identifier": [
+     {
+      "value": "cba5e54edcf7a8ad05b4500365b4c06f-Encounter"
+     }
+    ],
+    "status": "completed",
+    "class": {
+     "system": "http://hl7.org/fhir/v3/ActCode",
+     "code": "IMP"
+    },
+    "subject": {
+     "reference": "Patient/d627c29b5e5bc6b2a94fe4ff4c67830a"
+    },
+    "basedOn": [
+     {
+      "reference": "ServiceRequest/4b17ead5ed97ee9ce7885bb2c15f72ce"
+     }
+    ],
+    "period": {
+     "start": "2013-12-20",
+     "end": "2013-12-20"
+    },
+    "reasonCode": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+        "code": "I25",
+        "display": "Laboratory"
+       }
+      ]
+     }
+    ]
+   },
+   "request": {
+    "method": "PUT",
+    "url": "Encounter/35524ba432febb8f5ab076d0aacb2ac2",
+    "ifNoneExist": "identifier=35524ba432febb8f5ab076d0aacb2ac2"
+   }
+  }
+ ]
+}

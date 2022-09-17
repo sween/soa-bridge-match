@@ -7,7 +7,9 @@ def process_file(filename):
     # getting the bundle
     print("Processing file: {}".format(filename))
     ds = Naptha(filename)
-    ds.merge_sv()
+    subject_id = os.path.basename(filename).split('_')[3]
+    assert subject_id.startswith('01-701')
+    ds.merge_sv(subject_id=subject_id)
     ds.content.dump()
 
 

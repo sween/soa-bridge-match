@@ -10,7 +10,7 @@ There are a couple of changes made to the sample resource file including:
 
 Run the script:
 ```
-python patch_json.py LZZT_FHIR_Bundle_10_Patients_All_Resources.json
+python patch_json.py LZZT_FHIR_Bundle_10_Patients_All_Resources.json subjects
 ```
 
 It will generate a file per subject in a subjects subdirectory.
@@ -25,7 +25,48 @@ The subjects can have one or more Encounters merged into the file using the **SV
 
 In this case the subject bundles are in the `subjects` subdirectory.
 ```shell
-python add_visits.py subjects
+python add_visits.py subjects_31
+```
+
+example output is:
+```
+Processing file: subjects_31/LZZT_FHIR_Bundle_01-701-1115_All_Resources.json
+Processing patient 01-701-1115 -> 1.0
+Adding resource to bundle: CarePlan
+Adding resource to bundle: ServiceRequest
+Adding resource to bundle: Encounter
+Processing patient 01-701-1115 -> 2.0
+Adding resource to bundle: CarePlan
+Adding resource to bundle: ServiceRequest
+Adding resource to bundle: Encounter
+Processing patient 01-701-1115 -> 3.0
+Adding resource to bundle: CarePlan
+Adding resource to bundle: ServiceRequest
+Adding resource to bundle: Encounter
+```
+
+## Adding the medications 
+
+The subjects can have medications added for the subject
+
+In this case the subject bundles are in the `subjects` subdirectory.
+```shell
+python add_medications.py subjects_31
+```
+
+Output will look something like the following
+```
+Processing file: subjects_31/LZZT_FHIR_Bundle_01-701-1047_All_Resources.json
+Adding medications for 01-701-1047
+Adding medication for 01-701-1047 from 2013-02-12 00:00:00 to 2013-02-25 00:00:00 (13 days)
+Adding medication for 01-701-1047 from 2013-02-26 00:00:00 to 2013-03-09 00:00:00 (11 days)
+Generated 24 medication administrations for 01-701-1047
+Done
+Processing file: subjects_31/LZZT_FHIR_Bundle_01-701-1111_All_Resources.json
+Adding medications for 01-701-1111
+Adding medication for 01-701-1111 from 2012-09-07 00:00:00 to 2012-09-16 00:00:00 (9 days)
+Generated 9 medication administrations for 01-701-1111
+Done
 ```
 
 ## Cloning a Research Subject

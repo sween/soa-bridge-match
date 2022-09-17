@@ -190,7 +190,7 @@ class SourcedBundle:
                 print(f"Resource {resource.resource_type}/{resource.id} already exists in bundle")
                 return
         else:
-            print("Adding resource to bundle: {}".format(resource.resource_type))
+            # print("Adding resource to bundle: {}".format(resource.resource_type))
             entry = BundleEntry(resource=resource,
                                 request=BundleEntryRequest(method="PUT",
                                                            url=f"{resource.resource_type}/{resource.id}",

@@ -5,7 +5,6 @@ import sys
 import uuid
 from datetime import datetime
 
-sys.path.append('../src')
 """
 This script does some elementary patching of the JSON files from the upstream
 - adds a transaction type to the Bundle
@@ -25,6 +24,8 @@ STATUS = dict(Observation=dict(status="final"),
               MedicationStatement=dict(status="completed"))
 
 SUBJECT_MAP = {}
+
+IP_ID = "H2Q-MC-LZZT-LY246708"
 
 
 def update_references(parent: dict):
@@ -92,7 +93,7 @@ def patch_adverse_event(adverse_event: dict):
         for item in adverse_event['suspectEntity']:
             if 'instance' not in item:
                 # add a link to the medication (currently dangling)
-                item['instance'] = dict(reference='Medication/LY246708')
+                item['instance'] = dict(reference=f'Medication/{IP_ID}')
     if 'contained' in adverse_event:
         for item in adverse_event['contained']:
             # clone the subject from the event
@@ -106,6 +107,7 @@ def patch_observation(observation: dict):
     """
     Add the OTHER LOINC LONG NAME fix
     """
+    identifier = observation["id"]
     code = observation['code']
     if 'text' in code and code['text'] == 'OTHER LOINC LONG NAME':
         code['text'] = 'Body temperature'
@@ -116,6 +118,36 @@ def patch_observation(observation: dict):
         print("Patched OTHER LOINC LONG NAME")
     if 'status' not in observation:
         observation['status'] = 'final'
+    if 'effectiveDateTime' in observation:
+        if 'T' not in observation['effectiveDateTime']:
+            observation['effectiveDateTime'] = observation['effectiveDateTime'] + 'T08:00:00Z'
+        elif not observation['effectiveDateTime'].endswith('Z'):
+            observation['effectiveDateTime'] = observation['effectiveDateTime'] + 'Z'
+    if 'start' in observation:
+        if 'T' in observation['start'] and not observation['start'].endswith('Z'):
+            observation['start'] = observation['start'] + 'Z'
+    if 'end' in observation:
+        if 'T' in observation['end'] and not observation['end'].endswith('Z'):
+            observation['end'] = observation['end'] + 'Z'
+    return identifier
+
+def purge_comments(resource: dict):
+    """
+    Remove comments from the resource
+    """
+    if not isinstance(resource, (dict, list)):
+        return
+    if 'fhir_comments' in resource:
+        del resource['fhir_comments']
+    if isinstance(resource, list):
+        for child in resource.copy():
+            purge_comments(child)
+    elif isinstance(resource, dict):
+        for child_name, child in resource.copy().items():
+            # remove the 
+            if child_name.startswith('_'):
+                del resource[child_name]
+            purge_comments(child)
 
 
 def split_bundle(bundle: dict, expected: list[str]) -> dict:
@@ -128,7 +160,10 @@ def split_bundle(bundle: dict, expected: list[str]) -> dict:
     for entry in bundle['entry']:
         rtype = entry['resource']['resourceType']
         # maybe this should check for 'subject' or 'individual'
-        if rtype in ("ResearchStudy", "Group", "Organization", "Practitioner", "Medication") or rtype.endswith(
+        if rtype == "ObservationDefinition":
+            # ignore ObservationDefinition
+            continue
+        elif rtype in ("ResearchStudy", "Group", "Organization", "Practitioner", "Medication") or rtype.endswith(
                 "Definition"):
             # design elements
             common.append(entry)
@@ -158,7 +193,7 @@ def split_bundle(bundle: dict, expected: list[str]) -> dict:
     return cache
 
 
-def patch_file(filename):
+def patch_file(filename, output_dir):
     if os.path.exists(filename):
         id_cache = {}
         dupes = {}
@@ -196,7 +231,7 @@ def patch_file(filename):
                 # track the patient ids
                 patient_ids[_identifier] = original_id
             elif resource['resourceType'] == 'Observation':
-                patch_observation(resource)
+                _identifier = patch_observation(resource)
             elif resource['resourceType'] in STATUS:
                 _sets = STATUS[resource['resourceType']]
                 for key, value in _sets.items():
@@ -212,6 +247,7 @@ def patch_file(filename):
                     elif key not in entry['resource']:
                         entry['resource'][key] = value
             update_references(resource)
+            purge_comments(resource)
             # if 'fullUrl' not in entry:
             #     # ADD THE FULL URL
             #     entry['fullUrl'] = _identifier
@@ -231,13 +267,13 @@ def patch_file(filename):
                          ifNoneExist=f"id={_site_id}")
         )
         data['entry'].append(site_entry)
-        # add a record for the medication
+        # add a record for the medication (IP)
         medication_entry = dict(resource=dict(
             resourceType='Medication',
-            id="LY246708"),
+            id=IP_ID),
             request=dict(method='PUT',
-                         url=f'Medication/LY246708',
-                         ifNoneExist=f"id=LY246708")
+                         url=f'Medication/{IP_ID}',
+                         ifNoneExist=f"id={IP_ID}")
         )
         data['entry'].append(medication_entry)
         # check we haven't made a new subject or two
@@ -254,7 +290,9 @@ def patch_file(filename):
                            meta=dict(lastUpdated=datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ')),
                            entry=entries)
 
-            with open(f"subjects/{prefix.replace('10_Patients', patient_ids.get(patient_id))}{ext}", 'w') as f:
+            if not os.path.exists(output_dir):
+                os.makedirs(output_dir)
+            with open(f"{output_dir}/{os.path.basename(prefix).replace('10_Patients', patient_ids.get(patient_id))}{ext}", 'w') as f:
                 json.dump(content, f, indent=2)
 
     else:
@@ -262,4 +300,4 @@ def patch_file(filename):
 
 
 if __name__ == "__main__":
-    patch_file(sys.argv[1])
+    patch_file(sys.argv[1], sys.argv[2])
