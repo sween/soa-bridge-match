@@ -198,14 +198,22 @@ class Naptha:
                 "display": "clopidogrel"
             }
         ]
+        medchoice = random.choice(medchoices)
+        medconcept = CodeableConcept(
+                    coding=[
+                        Coding(
+                            code=medchoice["code"],
+                            display=medchoice["display"],
+                            system="http://www.nlm.nih.gov/research/umls/rxnorm",
+                        )
+                    ]
+                )
         # Add the TTS-Test
         _tts_id = hh(f"{subject_id}-TTS-Test-Request")
         tts_test_request = MedicationRequest(
             id=_tts_id,
             status="active",
-            medicationReference=Reference(
-                reference=f"Medication/H2Q-MC-LZZT-LY246708-Placebo-TTS"
-            ),
+            medicationCodeableConcept=medconcept,
             subject=Reference(reference=f"Patient/{patient_hash_id}"),
             instantiatesCanonical=[f"ActivityDefinition/H2Q-MC-LZZT-Placebo-TTS-Admin"],
             intent="order",
@@ -232,7 +240,7 @@ class Naptha:
         tts_admin = MedicationAdministration(
             id=_tts_admin_id,
             status="completed",
-            medicationReference=Reference(reference=f"Medication/{get_med(arm)}"),
+            medicationCodeableConcept=medconcept,
             subject=Reference(reference=f"Patient/{patient_hash_id}"),
             effectivePeriod=Period(
                 start=visit_1,
@@ -246,13 +254,13 @@ class Naptha:
         for offset, record in ex.iterrows():
             medchoice = random.choice(medchoices)
             medconcept = CodeableConcept(
-            coding=[
-                Coding(
-                code=medchoice["code"],
-                display=medchoice["display"],
-                system="http://www.nlm.nih.gov/research/umls/rxnorm",
-                )
-            ]
+                coding=[
+                    Coding(
+                        code=medchoice["code"],
+                        display=medchoice["display"],
+                        system="http://www.nlm.nih.gov/research/umls/rxnorm",
+                    )
+                ]
             )
             if pd.isna(record.EXENDTC):
                 print("Subject", subject_id, f"has missing end date at {offset}")
