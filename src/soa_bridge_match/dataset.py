@@ -19,6 +19,7 @@ from fhir.resources.fhirtypes import (
     ObservationReferenceRangeType,
 )
 from fhir.resources.encounter import Encounter
+from fhir.resources.fhirtypes import EncounterHospitalizationType
 from fhir.resources.identifier import Identifier
 from fhir.resources.patient import Patient
 from fhir.resources.period import Period
@@ -522,6 +523,30 @@ class Naptha:
             "201.0": "H2Q-MC-LZZT-Study-RT-15",
             "501.0": "H2Q-MC-LZZT-Study-RASH-FU",
         }
+        reasons = ["I21","I22","I23","I24","I25"]
+        statuses = ["in-progress","finished"]
+        dischargeCodes = [
+            {
+                "code": "home",
+                "display": "Home"
+            },
+            {
+                "code": "hosp",
+                "display": "Hospice"
+            },
+            {
+                "code": "exp",
+                "display": "Expired"
+            },
+            {
+                "code": "long",
+                "display": "Long-term care"
+            },
+            {
+                "code": "alt-home",
+                "display": "Alternative home"
+            },
+        ]
         for record in sv.itertuples():
             if record.USUBJID not in self.content.subjects:
                 continue
@@ -563,13 +588,30 @@ class Naptha:
             service_request.identifier = [
                 Identifier(value=f"{service_request_description}")
             ]
-            reasons = ["I21","I22","I23","I24","I25"]
-            statuses = ["in-progress","finished"]
+            discharge = random.choice(dischargeCodes)
             encounter = Encounter(
                 id=hh(f"{care_plan_id}-{record.VISITNUM}-Encounter"),
                 status=random.choice(statuses),
-                #discharge = "gar",
-                #dischargeDisposition='discharge',
+                hospitalization=EncounterHospitalizationType(
+                    dischargeDisposition=CodeableConcept(
+                        coding=[
+                            Coding(
+                                code=discharge["code"],
+                                display=discharge["display"],
+                                system="http://terminology.hl7.org/CodeSystem/discharge-disposition"
+                            )
+                        ]
+                    ),
+                    admitSource=CodeableConcept(
+                        coding=[
+                            Coding(
+                                system="https://terminology.hl7.org/CodeSystem/admit-source",
+                                code="emd",
+                                display="From accident/emergency department"
+                            )
+                        ]
+                    )
+                ),
                 reasonCode=[
                     CodeableConcept(
                         coding=[

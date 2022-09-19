@@ -6,7 +6,7 @@ authors = ["Geoff Low <glow@mdsol.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.10"
 "fhir.resources" = "^6.2.2"
 xport = "^3.6.1"
 jupyterlab = "^3.3.4"

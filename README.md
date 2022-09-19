@@ -23,7 +23,7 @@ This can then be augmented elements on an adhoc basis:
 To regenerate the files, run the following command (in the upstream folder):
 1. Patch the current implementation and split the content into patients
 ```
-python patch_json.py LZZT_FHIR_Bundle_10_Patients_All_Resources.json
+python patch_json.py source/LZZT_FHIR_Bundle_10_Patients_All_Resources.json
 ```
 2. Merge in the visit information (it will scan all the json files in the directory)
 ```

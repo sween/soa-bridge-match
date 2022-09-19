@@ -10,7 +10,7 @@ There are a couple of changes made to the sample resource file including:
 
 Run the script:
 ```
-python patch_json.py LZZT_FHIR_Bundle_10_Patients_All_Resources.json subjects
+python patch_json.py source/LZZT_FHIR_Bundle_10_Patients_All_Resources.json subjects
 ```
 
 It will generate a file per subject in a subjects subdirectory.
